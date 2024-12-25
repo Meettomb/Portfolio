@@ -36,7 +36,7 @@
                 <a href="#My_Journey" class="navlink-hover py-1 px-3">
                     <li>My Journey</li>
                 </a>
-                <a to="#Skill" class="navlink-hover py-1 px-3">
+                <a href="#Skill" class="navlink-hover py-1 px-3">
                     <li>Skill</li>
                 </a>
                 <a to="/" class="navlink-hover py-1 px-3">
@@ -54,16 +54,16 @@
 
                 <div class="dropdown-menu mt-2 text-white font-bold second-bg-color text-black rounded-md p-3">
                     <ul>
-                        <Link to="/" class="py-1 px-3">
+                        <a href="#" class="py-1 px-3">
                         <li class="">Home</li>
-                        </Link>
+                        </a>
                         <a href="#About" class="py-1 px-3">
                             <li>About</li>
                         </a>
                         <a href="#My_Journey" class="py-1 px-3">
                             <li>My Journey</li>
                         </a>
-                        <a to="#Skill" class="py-1 px-3">
+                        <a href="#Skill" class="py-1 px-3">
                             <li>Skill</li>
                         </a>
                         <a to="/" class="py-1 px-3">
@@ -160,10 +160,10 @@
         </section>
 
         <section class="section3 main-bg-color text-white py-10">
-            <h1 class="about_me_text text-center py-11 text-3xl font-bold">
+            <h1 class="about_me_text text-center py-11 text-3xl font-bold" id="My_Journey">
                 My <span class="text-cyan-400">Journey</span>
             </h1>
-            <div class="journy_class flex justify-center" id="My_Journey">
+            <div class="journy_class flex justify-center">
 
                 <div class="timeline overflow-x-hidden">
                     <div class="container left">
@@ -234,6 +234,80 @@
             </div>
         </section>
 
+        <section class="section4 second-bg-color text-white">
+            <h1 class="about_me_text text-center py-11 text-3xl font-bold" id="Skill">
+                My <span class="text-cyan-400">Skills</span>
+            </h1>
+
+            <div class="technical_skill">
+                <h2 class="text-2xl text-center">Technical
+                    <span class="text-cyan-400">Skills</span>
+                </h2>
+                <div class="langauge_skill">
+                    <div class="skill">
+                        <div class="frontend">
+                            <p class="text-center font-bold mb-5 text-2xl">Frontend</p>
+                            <div class="frontend_image">
+                                <img src="/Image/HTML-removebg.png" class="skills_image" alt="HTML" title="HTML">
+                                <img src="/Image/Css-removebg.png" class="skills_image" alt="CSS" title="CSS">
+                                <img src="/Image/JavaScript.png" class="skills_image" alt="JavaScript" title="JavaScript">
+                                <img src="/Image/Bootstrap.png" class="skills_image" alt="Bootstrap" title="Bootstrap">
+                                <img src="/Image/tailwind-removebg.png" class="skills_image" alt="Tailwind" title="Tailwind">
+                            </div>
+                        </div>
+
+                        <div class="backend">
+                            <p class="text-center font-bold mb-5 text-2xl">Backend</p>
+                            <div class="backend_image skills_image">
+                                <img src="/Image/php.png" class="skills_image" alt="PHP" title="PHP">
+                                <img src="/Image/Laravel.png" class="skills_image" alt="DotNet" title="Laravel">
+                                <img src="/Image/Dot-Net-removebg.png" class="skills_image" alt="DotNet" title="DotNet">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <table>
+                        <tr>
+                            <th>Frontend</th>
+                            <th>Backend</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/Image/HTML-removebg.png" alt="HTML">
+                                <img src="/Image/Css-removebg.png" alt="CSS">
+                                <img src="/Image/JavaScript.png" alt="JavaScript">
+                                <img src="/Image/Bootstrap.png" alt="Bootstrap">
+                                <img src="/Image/tailwind-removebg.png" alt="Tailwind">
+                            </td>
+                            <td>
+                                <img src="/Image/php.png" alt="PHP">
+                                <img src="/Image/Laravel.png" alt="DotNet">
+                                <img src="/Image/Dot-Net-removebg.png" alt="DotNet">
+                            </td>
+                        </tr>
+                    </table> -->
+                </div>
+            </div>
+
+            <h2 class="text-2xl py-11 text-center">Soft
+                <span class="text-cyan-400">Skills</span>
+            </h2>
+            <div class="soft_skill">
+                <div class="soft_skill_parent">
+                    <div class="all_soft_skills flex justify-center gap-8 flex-wrap">
+                        <span class="soft-skill skills_image">Critical Thinking</span>
+                        <span class="soft-skill skills_image">Effective Communication</span>
+                        <span class="soft-skill skills_image">Error Solving</span>
+                        <span class="soft-skill skills_image">Technical Leadership</span>
+                        <span class="soft-skill skills_image">Public Relations</span>
+                        <span class="soft-skill skills_image">Teamwork</span>
+                        <span class="soft-skill skills_image">Dedication</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
 
@@ -273,14 +347,15 @@
 
     </script>
 
-    <!--My Journy Content Script-->
+    <!--Animation Content Script-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const elements = document.querySelectorAll(".left-side-content"); // Select all elements you want to observe
             const elements1 = document.querySelectorAll(".right-side-content"); // Select all elements you want to observe
             const element2 = document.querySelectorAll(".about_image"); // Select all .about_image elements
             const element3 = document.querySelectorAll(".what_iam");
-    
+            const element4 = document.querySelectorAll(".skills_image");
+
             // Observer for .content elements
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -291,7 +366,7 @@
                     }
                 });
             });
-    
+
             const observer1 = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -301,7 +376,7 @@
                     }
                 });
             });
-    
+
             // Observer for .about_image elements
             const observe2 = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -312,7 +387,7 @@
                     }
                 });
             });
-    
+
             // Observer for .what_iam elements
             const observe3 = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -323,24 +398,39 @@
                     }
                 });
             });
-    
+            
+            // Observer for .skills_image elements
+            const observe4 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible4");
+                    } else {
+                        entry.target.classList.remove("visible4");
+                    }
+                });
+            });
+
             // Observe all .content elements
             elements.forEach((el) => {
                 observer.observe(el);
             });
-    
+
             elements1.forEach((el) => {
                 observer1.observe(el);
             });
-    
+
             element2.forEach((el) => {
                 observe2.observe(el);
             });
-    
+
             element3.forEach((el) => {
                 observe3.observe(el);
             });
-    
+
+            element4.forEach((el) => {
+                observe4.observe(el);
+            });
+
             // Responsive handling for .left-side-content
             function handleResponsiveLayout() {
                 if (window.matchMedia("(max-width: 600px)").matches) {
@@ -355,21 +445,22 @@
                     });
                 }
             }
-    
+
             // Call the function on page load and on resize
             handleResponsiveLayout();
             window.addEventListener("resize", handleResponsiveLayout);
-    
+
             // Cleanup when no longer needed (optional)
             window.addEventListener("beforeunload", () => {
                 observer.disconnect();
                 observer1.disconnect();
                 observe2.disconnect();
                 observe3.disconnect();
+                observe4.disconnect();
             });
         });
     </script>
-    
+
 
     <!--Type Writing Effect-->
     <script>

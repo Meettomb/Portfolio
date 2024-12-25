@@ -20,7 +20,11 @@
 }
 
 .social-links-hover {
-  @apply hover:bg-cyan-400 rounded-full px-2.5 py-1 hover:text-black hover:scale-105 transition-all duration-200 hover:animate-ping
+  @apply hover:bg-cyan-400 rounded-full px-2.5 py-1 hover:text-black hover:scale-105 transition-all duration-200 hover:animate-ping;
+}
+
+.soft-skill{
+ @apply w-52 text-center opacity-0 py-3 border-dashed border-2 cursor-pointer hover:border-solid transition-all hover:scale-105;
 }
 
 * {
@@ -289,25 +293,12 @@ main {
 
 }
 
-.education_div ul {}
+/* .education_div ul {} */
 
 .education_div ul li {
   list-style: square;
   border: 2px cyan solid;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .timeline {
   position: relative;
@@ -462,4 +453,112 @@ main {
   .right {
     left: 0%;
   }
+}
+
+
+
+.section4{
+  padding-top: 2.5rem /* 40px */;
+  padding-bottom: 2.5rem;
+  
+}
+.section4 h2{
+  text-transform:capitalize;
+  font-weight: 500;
+}
+.langauge_skill{
+  margin-top: 40px;
+  /* gap: 20px; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.skill{
+  width: 90%;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+.frontend{
+  width: 45%;
+}
+.frontend .frontend_image{
+  gap: 30px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+.skills_image{
+  opacity: 0;
+  bottom: -50px;
+  transition: opacity 1.5s linear, bottom 1.5s ease-in-out;
+}
+.skills_image.visible4{
+  opacity: 1;
+  bottom: 0;
+}
+
+.frontend_image img{
+  position: relative;
+  transition: 0.5s;
+}
+.frontend_image img:hover {
+  transform: perspective(20px) rotateX(2deg) translateY(-20px);
+  background-color: transparent;
+}
+
+
+.backend{
+  width: 45%;
+}
+.backend .backend_image{
+  gap: 30px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  transition: 1s;
+}
+
+.backend_image img{
+  position: relative;
+  transition: 0.5s;
+}
+.backend_image img:hover {
+  transform: perspective(20px) rotateX(2deg) translateY(-20px);
+  background-color: transparent;
+}
+.frontend img{
+  width: 150px;
+  border-radius: 10px;
+  height: 120px;
+  cursor: pointer;
+  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+  padding: 10px 30px;
+}
+
+.backend img{
+  width: 150px;
+  border-radius: 10px;
+  height: 120px;
+  cursor: pointer;
+  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+  padding: 10px 30px;
+}
+
+@media (max-width: 556px) {
+  .skill{
+    gap: 20px;
+  }
+}
+.soft_skill{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.soft_skill_parent{
+  width: 90%;
 }
