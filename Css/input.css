@@ -127,7 +127,7 @@ main {
   }
 }
 
-@media (max-width: 823px) {
+@media (max-width: 900px) {
   .navbar .ul {
     display: none;
   }
@@ -507,6 +507,7 @@ main {
 }
 .frontend_image img:hover {
   transform: perspective(20px) rotateX(2deg) translateY(-20px);
+  
   background-color: transparent;
 }
 
@@ -536,7 +537,7 @@ main {
   border-radius: 10px;
   height: 120px;
   cursor: pointer;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+  background-color: rgb(13, 21, 43);
   padding: 10px 30px;
 }
 
@@ -545,7 +546,7 @@ main {
   border-radius: 10px;
   height: 120px;
   cursor: pointer;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+  background-color: rgb(13, 21, 43);
   padding: 10px 30px;
 }
 
@@ -561,4 +562,132 @@ main {
 }
 .soft_skill_parent{
   width: 90%;
+}
+
+
+
+
+
+.section5 {
+  padding-top: 2.5rem; /* 40px */
+  padding-bottom: 2.7rem;
+  overflow-x: hidden;
+}
+
+.my_skil_container{
+  width: 100%;
+  height: auto; display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.my_skil_container a {
+  width: 40%;
+  perspective: 1000px; /* Enables 3D effect */
+  
+  position: relative;
+}
+.left-side-of-project {
+  position: relative;
+  opacity: 0;
+  left: -100px;
+  transition: opacity 1.5s linear, left 1.3s ease-in-out;
+  overflow: hidden;
+}
+.visible5 {
+  opacity: 1;
+  left: 0;
+}
+.right-side-of-project {
+  position: relative;
+  opacity: 0;
+  right: -100px;
+  transition: opacity 1.5s linear, right 1.3s ease-in-out;
+  overflow: hidden;
+}
+.visible6 {
+  opacity: 1;
+  right: 0;
+}
+
+.single_project {
+  width: 100%;
+  min-height: 300px;
+  padding: 15px;
+  position: relative;
+  transform-style: preserve-3d; /* Preserves 3D transformations */
+  transition: transform 0.3s ease-in-out;
+}
+
+.single_project:hover {
+  transform: rotateY(180deg); /* Flips card to show the back side */
+}
+
+.single_project .front,
+.single_project .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the side not visible */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  overflow: auto; /* Ensures content fits within the card */
+}
+
+.single_project_details{
+  padding: 15px 20px;
+}
+
+.single_project .front {
+  z-index: 2;
+  transform: rotateY(0deg); /* Initial front side */
+}
+
+.single_project .back {
+  z-index: 1;
+  transform: rotateY(180deg); /* Back side */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.single_project .back img {
+  width: 50%;
+  object-fit: cover;
+  padding: 15px 20px;
+}
+.project_langaug_image img{
+  width: 30px;
+}
+
+
+@media (min-width: 930px) and (max-width: 1080px) {
+  .single_project{
+    height: 320px;
+  }
+}
+
+@media (max-width: 930px) {
+  
+  .my_skil_container a{
+    flex-wrap: wrap;
+    width: 90%;
+  }
+ 
+}
+
+@media (min-width: 20px) and (max-width: 481px) {
+  .single_project{
+    height: 320px;
+  }
+  .single_project_details h2{
+    font-size: 13px;
+  }
+  .single_project_details article{
+    font-size: 13px;
+  }
 }
