@@ -1,9 +1,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const navLinks = [
     { name: "Home", href: "#home", id: "home" },
@@ -16,9 +19,32 @@ const navLinks = [
 
 const Header = () => {
     const headerRef = useRef(null);
+    const headerVisibleRef = useRef(true);
     const [isOpen, setIsOpen] = useState(false);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const scrollTrigger = ScrollTrigger.create({
+            start: 0,
+            end: "max",
+            onUpdate: (self) => {
+                const isAtTop = self.scroll() <= 10;
+                const shouldShowHeader = isAtTop || self.direction === -1;
+
+                if (headerVisibleRef.current !== shouldShowHeader) {
+                    headerVisibleRef.current = shouldShowHeader;
+                    setIsHeaderVisible(shouldShowHeader);
+                    if (!shouldShowHeader) {
+                        setIsOpen(false);
+                    }
+                }
+            },
+        });
+
+        return () => scrollTrigger.kill();
+    }, []);
 
     // =================================
     // GSAP NAVIGATION ANIMATION
@@ -85,10 +111,10 @@ const Header = () => {
             ref={headerRef}
             className="header"
             initial={{ y: -80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={{ y: isHeaderVisible ? 0 : "-100%", opacity: 1 }}
             transition={{
-                duration: 0.6,
-                ease: "easeOut"
+                duration: isHeaderVisible ? 0.6 : 0.35,
+                ease: "easeOut",
             }}
         >
 
