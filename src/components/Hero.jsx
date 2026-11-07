@@ -1,0 +1,195 @@
+import React, { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { Download } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
+
+gsap.registerPlugin(TextPlugin);
+
+export default function Hero() {
+    const compRef = useRef(null);
+    const textRef = useRef(null);
+    const cursorRef = useRef(null);
+    const imageRef = useRef(null);
+    const blobWrapperRef = useRef(null);
+
+    const titles = [
+        'Full Stack Developer',
+        '.Net Enthusiast',
+        'React & Node.js Developer',
+    ];
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            // 1. Initial Page Load Entrance Timeline
+            const introTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+            introTl
+                .from('.hero-greeting', {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                })
+                .from('.hero-name', {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                }, '-=0.3')
+                .from('.hero-title', {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                }, '-=0.4')
+                .from('.hero-description', {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6,
+                }, '-=0.4')
+                .from('.hero-actions .hero-btn, .hero-actions .hero-btn-secondary', {
+                    y: 20,
+                    opacity: 0,
+                    stagger: 0.12,
+                    duration: 0.5,
+                    clearProps: 'all' // Resets GSAP inline styles after animating so they never stay stuck
+                }, '-=0.3')
+                .from(imageRef.current, {
+                    scale: 0.7,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: 'back.out(1)',
+                }, '-=0.8');
+
+            // 2. Subtle Floating Animation
+            gsap.to(imageRef.current, {
+                y: -14,
+                duration: 3,
+                ease: 'sine.inOut',
+                repeat: -1,
+                yoyo: true,
+            });
+
+            // 3. Fluid Blob Morphing Animation (Liquid 🫟 Effect)
+            gsap.to(['.blob-shape', '.blob-backdrop', '.blob-ring'], {
+                borderRadius: '50%',
+                duration: 4,
+                ease: 'sine.inOut',
+                repeat: -1,
+                yoyo: true,
+            });
+
+            // 4. Blinking Cursor Animation
+            gsap.to(cursorRef.current, {
+                opacity: 0,
+                ease: 'power2.inOut',
+                repeat: -1,
+                yoyo: true,
+                duration: 0.5,
+            });
+
+            // 5. Looping Typewriter Timeline
+            const masterTl = gsap.timeline({ repeat: -1 });
+
+            titles.forEach((title) => {
+                const tl = gsap.timeline({
+                    repeat: 1,
+                    yoyo: true,
+                    repeatDelay: 1.5,
+                });
+
+                tl.to(textRef.current, {
+                    duration: title.length * 0.08,
+                    text: title,
+                    ease: 'none',
+                });
+
+                masterTl.add(tl);
+            });
+        }, compRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    return (
+        <section className="hero" id="home" ref={compRef}>
+            <div className="hero-content">
+                <p className="hero-greeting">Hello, I'm</p>
+
+                <h1 className="hero-name">Meet Patel</h1>
+
+                <h2 className="hero-title">
+                    <span ref={textRef}></span>
+                    <span ref={cursorRef} className="typewriter-cursor">
+                        |
+                    </span>
+                </h2>
+
+                <p className="hero-description">
+                    I build modern, responsive, and user-friendly web applications with a
+                    focus on clean code and great user experiences.
+                </p>
+
+                <div className="hero-actions">
+                    {/* View My Work */}
+                    <a
+                        href="#projects"
+                        className="hero-btn"
+                        data-cursor="hover"
+                    >
+                        View My Work
+                    </a>
+
+                    {/* Contact Me */}
+                    <a
+                        href="#contact"
+                        className="hero-btn-secondary"
+                        data-cursor="hover"
+                    >
+                        Contact Me
+                    </a>
+
+                    {/* Download Resume */}
+                    <a
+                        href="/resume.pdf"
+                        download="Meet-Patel-Resume.pdf"
+                        className="hero-btn-secondary"
+                        data-cursor="hover"
+                    >
+                        <Download size={18} />
+                        Download Resume
+                    </a>
+
+                    {/* GitHub */}
+                    <a
+                        href="https://github.com/Meettomb"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hero-btn-secondary"
+                        data-cursor="hover"
+                    >
+                        <FaGithub size={18} />
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            {/* Morphing Organic Blob Visual Section */}
+            <div className="hero-image" ref={imageRef}>
+                <div className="blob-container" ref={blobWrapperRef}>
+                    {/* Ambient Glow */}
+                    <div className="blob-glow"></div>
+
+                    {/* Floating Border Outline */}
+                    <div className="blob-ring"></div>
+
+                    {/* Layered Backdrop */}
+                    <div className="blob-backdrop"></div>
+
+                    {/* Image masked in Blob with your original src */}
+                    <div className="blob-shape">
+                        <img src="./assets/profile2.png" alt="Meet Patel" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
