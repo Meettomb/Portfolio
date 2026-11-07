@@ -54,6 +54,16 @@ const Header = () => {
         setIsOpen(false);
     };
 
+    const scrollToSection = (e, href) => {
+        e.preventDefault();
+        setIsOpen(false);
+
+        const smoother = window.__smoother;
+        if (smoother) {
+            smoother.scrollTo(href, true, 'top 80px'); // 80px = your header height
+        }
+    };
+
 
     // =================================
     // LOGO NAVIGATION
@@ -62,6 +72,7 @@ const Header = () => {
     const handleLogoClick = () => {
         setIsOpen(false);
         navigate("/");
+        window.__smoother?.scrollTo(0, true);
     };
 
 
@@ -109,7 +120,7 @@ const Header = () => {
                             key={link.id}
                             data-cursor="hover"
                         >
-                            <a href={link.href}>
+                            <a href={link.href} onClick={(e) => scrollToSection(e, link.href)}>
                                 {link.name}
                             </a>
                         </li>
@@ -166,7 +177,7 @@ const Header = () => {
                                 >
                                     <a
                                         href={link.href}
-                                        onClick={closeMenu}
+                                        onClick={(e) => scrollToSection(e, link.href)}
                                     >
                                         {link.name}
                                     </a>

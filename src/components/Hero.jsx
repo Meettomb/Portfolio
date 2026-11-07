@@ -49,11 +49,12 @@ export default function Hero() {
                     opacity: 0,
                     duration: 0.8,
                 }, '-=0.3')
+                .addLabel('hero-title', '-=0.4')
                 .from('.hero-title', {
                     y: 20,
                     opacity: 0,
                     duration: 0.6,
-                }, '-=0.4')
+                }, 'hero-title')
                 .from('.hero-description', {
                     y: 20,
                     opacity: 0,
@@ -68,14 +69,14 @@ export default function Hero() {
                         duration: 0.5,
                         clearProps: 'all'
                     },
-                    '-=0.3'
+                    'hero-title'
                 )
                 .from(imageRef.current, {
                     scale: 0.7,
                     opacity: 0,
                     duration: 0.8,
                     ease: 'back.out(1)',
-                }, '-=0.8');
+                }, 0);
 
 
             // 2. Subtle Floating Animation
