@@ -110,6 +110,10 @@ const Header = () => {
         <motion.header
             ref={headerRef}
             className="header"
+            style={{
+                backdropFilter: "blur(50px) saturate(180%)",
+                background: "rgba(20, 33, 61, 0.3)",
+            }}
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: isHeaderVisible ? 0 : "-100%", opacity: 1 }}
             transition={{
