@@ -1,17 +1,21 @@
+
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Download } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
-gsap.registerPlugin(TextPlugin);
+// Register GSAP Plugins
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function Hero() {
     const compRef = useRef(null);
+    const overviewRef = useRef(null);
+
     const textRef = useRef(null);
     const cursorRef = useRef(null);
     const imageRef = useRef(null);
-    const blobWrapperRef = useRef(null);
 
     const titles = [
         'Full Stack Developer',
@@ -20,9 +24,19 @@ export default function Hero() {
     ];
 
     useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            // 1. Initial Page Load Entrance Timeline
-            const introTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+        // =================================
+        // 1. HERO SECTION ANIMATIONS
+        // =================================
+
+        const heroCtx = gsap.context(() => {
+
+            // Initial Page Load Entrance Timeline
+            const introTl = gsap.timeline({
+                defaults: {
+                    ease: 'power3.out'
+                }
+            });
 
             introTl
                 .from('.hero-greeting', {
@@ -45,19 +59,24 @@ export default function Hero() {
                     opacity: 0,
                     duration: 0.6,
                 }, '-=0.4')
-                .from('.hero-actions .hero-btn, .hero-actions .hero-btn-secondary', {
-                    y: 20,
-                    opacity: 0,
-                    stagger: 0.12,
-                    duration: 0.5,
-                    clearProps: 'all' // Resets GSAP inline styles after animating so they never stay stuck
-                }, '-=0.3')
+                .from(
+                    '.hero-actions .hero-btn, .hero-actions .hero-btn-secondary',
+                    {
+                        y: 20,
+                        opacity: 0,
+                        stagger: 0.12,
+                        duration: 0.5,
+                        clearProps: 'all'
+                    },
+                    '-=0.3'
+                )
                 .from(imageRef.current, {
                     scale: 0.7,
                     opacity: 0,
                     duration: 0.8,
                     ease: 'back.out(1)',
                 }, '-=0.8');
+
 
             // 2. Subtle Floating Animation
             gsap.to(imageRef.current, {
@@ -68,14 +87,19 @@ export default function Hero() {
                 yoyo: true,
             });
 
-            // 3. Fluid Blob Morphing Animation (Liquid 🫟 Effect)
-            gsap.to(['.blob-shape', '.blob-backdrop', '.blob-ring'], {
-                borderRadius: '50%',
-                duration: 4,
-                ease: 'sine.inOut',
-                repeat: -1,
-                yoyo: true,
-            });
+
+            // 3. Fluid Blob Morphing Animation
+            gsap.to(
+                ['.blob-shape', '.blob-backdrop', '.blob-ring'],
+                {
+                    borderRadius: '50%',
+                    duration: 4,
+                    ease: 'sine.inOut',
+                    repeat: -1,
+                    yoyo: true,
+                }
+            );
+
 
             // 4. Blinking Cursor Animation
             gsap.to(cursorRef.current, {
@@ -86,10 +110,14 @@ export default function Hero() {
                 duration: 0.5,
             });
 
+
             // 5. Looping Typewriter Timeline
-            const masterTl = gsap.timeline({ repeat: -1 });
+            const masterTl = gsap.timeline({
+                repeat: -1
+            });
 
             titles.forEach((title) => {
+
                 const tl = gsap.timeline({
                     repeat: 1,
                     yoyo: true,
@@ -104,92 +132,225 @@ export default function Hero() {
 
                 masterTl.add(tl);
             });
+
         }, compRef);
 
-        return () => ctx.revert();
+
+        // =================================
+        // 2. PROJECT OVERVIEW COUNTER
+        // =================================
+
+        const overviewCtx = gsap.context(() => {
+
+            gsap.from('#total-projects, #total-language-used, #devlopment-areas', {
+                innerText: 0,
+                duration: 0.8,
+                snap: {
+                    innerText: 1
+                },
+                ease: 'power2.out',
+
+                scrollTrigger: {
+                    trigger: '#total-projects, #total-language-used, #devlopment-areas',
+                    start: 'top 80%',
+                    once: true,
+                }
+            });
+
+        }, overviewRef);
+
+
+        // =================================
+        // 3. CLEANUP
+        // =================================
+
+        return () => {
+            heroCtx.revert();
+            overviewCtx.revert();
+        };
+
     }, []);
 
+
     return (
-        <section className="hero" id="home" ref={compRef}>
-            <div className="hero-content">
-                <p className="hero-greeting">Hello, I'm</p>
+        <>
+            {/* =================================
+                HERO SECTION
+            ================================= */}
 
-                <h1 className="hero-name">Meet Patel</h1>
+            <section className="hero"
+                id="home"
+                ref={compRef}
+            >
 
-                <h2 className="hero-title">
-                    <span ref={textRef}></span>
-                    <span ref={cursorRef} className="typewriter-cursor">
-                        |
-                    </span>
-                </h2>
+                <div className="hero-content">
 
-                <p className="hero-description">
-                    I build modern, responsive, and user-friendly web applications with a
-                    focus on clean code and great user experiences.
-                </p>
+                    <p className="hero-greeting">
+                        Hello, I'm
+                    </p>
 
-                <div className="hero-actions">
-                    {/* View My Work */}
-                    <a
-                        href="#projects"
-                        className="hero-btn"
-                        data-cursor="hover"
-                    >
-                        View My Work
-                    </a>
+                    <h1 className="hero-name">
+                        Meet Patel
+                    </h1>
 
-                    {/* Contact Me */}
-                    <a
-                        href="#contact"
-                        className="hero-btn-secondary"
-                        data-cursor="hover"
-                    >
-                        Contact Me
-                    </a>
+                    <h2 className="hero-title">
+                        <span ref={textRef}></span>
 
-                    {/* Download Resume */}
-                    <a
-                        href="/resume.pdf"
-                        download="Meet-Patel-Resume.pdf"
-                        className="hero-btn-secondary"
-                        data-cursor="hover"
-                    >
-                        <Download size={18} />
-                        Download Resume
-                    </a>
+                        <span
+                            ref={cursorRef}
+                            className="typewriter-cursor"
+                        >
+                            |
+                        </span>
+                    </h2>
 
-                    {/* GitHub */}
-                    <a
-                        href="https://github.com/Meettomb"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hero-btn-secondary"
-                        data-cursor="hover"
-                    >
-                        <FaGithub size={18} />
-                        GitHub
-                    </a>
-                </div>
-            </div>
+                    <p className="hero-description">
+                        I build modern, responsive, and user-friendly web
+                        applications with a focus on clean code and great
+                        user experiences.
+                    </p>
 
-            {/* Morphing Organic Blob Visual Section */}
-            <div className="hero-image" ref={imageRef}>
-                <div className="blob-container" ref={blobWrapperRef}>
-                    {/* Ambient Glow */}
-                    <div className="blob-glow"></div>
 
-                    {/* Floating Border Outline */}
-                    <div className="blob-ring"></div>
+                    {/* Hero Actions */}
 
-                    {/* Layered Backdrop */}
-                    <div className="blob-backdrop"></div>
+                    <div className="hero-actions">
 
-                    {/* Image masked in Blob with your original src */}
-                    <div className="blob-shape">
-                        <img src="./assets/profile2.png" alt="Meet Patel" loading="lazy" />
+                        <a
+                            href="#projects"
+                            className="hero-btn"
+                            data-cursor="hover"
+                        >
+                            View My Work
+                        </a>
+
+                        <a
+                            href="#contact"
+                            className="hero-btn-secondary"
+                            data-cursor="hover"
+                        >
+                            Contact Me
+                        </a>
+
+                        <a
+                            href="/resume.pdf"
+                            download="Meet-Patel-Resume.pdf"
+                            className="hero-btn-secondary"
+                            data-cursor="hover"
+                        >
+                            <Download size={18} />
+                            Download Resume
+                        </a>
+
+                        <a
+                            href="https://github.com/Meettomb"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hero-btn-secondary"
+                            data-cursor="hover"
+                        >
+                            <FaGithub size={18} />
+                            GitHub
+                        </a>
+
                     </div>
+
                 </div>
-            </div>
-        </section>
+
+
+                {/* Morphing Organic Blob Visual */}
+
+                <div
+                    className="hero-image"
+                    ref={imageRef}
+                >
+
+                    <div className="blob-container">
+
+                        {/* Ambient Glow */}
+                        <div className="blob-glow"></div>
+
+                        {/* Floating Border Outline */}
+                        <div className="blob-ring"></div>
+
+                        {/* Layered Backdrop */}
+                        <div className="blob-backdrop"></div>
+
+                        {/* Profile Image */}
+                        <div className="blob-shape">
+                            <img
+                                src="./assets/profile2.png"
+                                alt="Meet Patel"
+                                loading="lazy"
+                            />
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =================================
+                PROJECT OVERVIEW SECTION
+            ================================= */}
+
+            <section
+                className="littel_projet_overview"
+                ref={overviewRef}
+            >
+
+                <div className="littel_projet_overview_content">
+
+                    <div className="total_project">
+
+                        <p id="total-projects">
+                            10
+                        </p>
+
+                        <p>
+                            Project Showcased
+                        </p>
+
+                    </div>
+
+
+                    <div className="total_language_used">
+
+                        <p id='total-language-used'>5</p>
+
+                        <p>
+                            Programming languages
+                        </p>
+
+                    </div>
+
+
+                    <div className="total_development_areas">
+
+                        <p id='devlopment-areas'>4</p>
+
+                        <p>
+                            Development areas
+                        </p>
+
+                    </div>
+
+
+                    <div className="specialization_areas">
+
+                        <p>MERN &amp; .Net</p>
+
+                        <p>
+                            Specialization Domain
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </>
     );
 }

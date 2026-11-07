@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { motion, AnimatePresence } from "motion/react";
@@ -17,51 +18,97 @@ const Header = () => {
     const headerRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
 
-    // Initial desktop/header GSAP animation
+    const navigate = useNavigate();
+
+    // =================================
+    // GSAP NAVIGATION ANIMATION
+    // =================================
+
     useEffect(() => {
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline();
 
-            tl.from(".header", {
-                y: -80,
-                opacity: 0,
-                duration: 0.6,
-                ease: "power3.out",
-            }).from(".desktop-nav li", {
+            gsap.from(".desktop-nav li", {
                 opacity: 0,
                 y: -10,
                 duration: 0.4,
                 stagger: 0.1,
                 ease: "power2.out",
-            }, "-=0.2");
+                delay: 0.3,
+            });
+
         }, headerRef);
 
         return () => ctx.revert();
     }, []);
 
-    const toggleMenu = () => setIsOpen((prev) => !prev);
-    const closeMenu = () => setIsOpen(false);
 
-    const navigate = useNavigate();
-    function handleLogoClick() {
+    // =================================
+    // MENU CONTROLS
+    // =================================
+
+    const toggleMenu = () => {
+        setIsOpen((prev) => !prev);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
+
+    // =================================
+    // LOGO NAVIGATION
+    // =================================
+
+    const handleLogoClick = () => {
+        setIsOpen(false);
         navigate("/");
-    }
+    };
+
+
+    // =================================
+    // RENDER
+    // =================================
 
     return (
         <motion.header
+            ref={headerRef}
+            className="header"
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="header" ref={headerRef}>
-            <div className="logo" onClick={handleLogoClick}>
-                M.P
+            transition={{
+                duration: 0.6,
+                ease: "easeOut"
+            }}
+        >
+
+            {/* LOGO */}
+
+            <div
+                className="logo"
+                onClick={handleLogoClick}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        handleLogoClick();
+                    }
+                }}
+            >
+                <p>
+                    MP<span>.</span>
+                </p>
             </div>
 
-            {/* Desktop Navigation */}
+
+            {/* DESKTOP NAVIGATION */}
+
             <nav className="nav desktop-nav">
                 <ul>
                     {navLinks.map((link) => (
-                        <li key={link.id} data-cursor="hover">
+                        <li
+                            key={link.id}
+                            data-cursor="hover"
+                        >
                             <a href={link.href}>
                                 {link.name}
                             </a>
@@ -70,30 +117,57 @@ const Header = () => {
                 </ul>
             </nav>
 
-            {/* Hamburger / Close Toggle Button */}
+
+            {/* HAMBURGER BUTTON */}
+
             <button
                 className="hamburger-btn"
                 onClick={toggleMenu}
-                aria-label="Toggle navigation"
+                aria-label={isOpen ? "Close navigation" : "Open navigation"}
+                aria-expanded={isOpen}
                 data-cursor="hover"
             >
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
+                {isOpen ? (
+                    <X size={28} />
+                ) : (
+                    <Menu size={28} />
+                )}
             </button>
 
-            {/* Mobile Dropdown Menu */}
+
+            {/* MOBILE NAVIGATION */}
+
             <AnimatePresence>
                 {isOpen && (
                     <motion.nav
                         className="mobile-nav"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        initial={{
+                            opacity: 0,
+                            y: -20
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0
+                        }}
+                        exit={{
+                            opacity: 0,
+                            y: -20
+                        }}
+                        transition={{
+                            duration: 0.25,
+                            ease: "easeOut"
+                        }}
                     >
                         <ul>
                             {navLinks.map((link) => (
-                                <li key={link.id} data-cursor="hover">
-                                    <a href={link.href} onClick={closeMenu}>
+                                <li
+                                    key={link.id}
+                                    data-cursor="hover"
+                                >
+                                    <a
+                                        href={link.href}
+                                        onClick={closeMenu}
+                                    >
                                         {link.name}
                                     </a>
                                 </li>
@@ -102,6 +176,7 @@ const Header = () => {
                     </motion.nav>
                 )}
             </AnimatePresence>
+
         </motion.header>
     );
 };

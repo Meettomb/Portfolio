@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import { motion, AnimatePresence } from "motion/react";
 import CustomCursor from './components/CustomCursor'
 import { BrowserRouter } from "react-router-dom";
+import About from './components/About'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <CustomCursor />
         <Header />
         <Hero />
+        <About />
       </BrowserRouter>
     </>
   )
