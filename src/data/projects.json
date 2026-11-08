@@ -1,0 +1,277 @@
+
+{
+  "projects": [
+    {
+      "id": "focustrack",
+      "number": "01",
+      "featured": true,
+      "title": "FocusTrack",
+      "badge": "Windows Desktop Application",
+      "year": "2025",
+      "categories": ["Desktop"],
+      "description": "A Windows productivity and screen-time tracking application designed to help users understand their application usage and improve their focus.",
+      "features": [
+        "Application usage tracking",
+        "Screen-time monitoring",
+        "Application opening statistics",
+        "Custom application usage limits",
+        "Tasks and subtasks",
+        "Reminders and notifications",
+        "Productivity dashboard",
+        "Themes and customization",
+        "Feedback and bug reporting"
+      ],
+      "highlights": [
+        "Windows desktop application",
+        "SQLite-based local storage",
+        "Application startup integration",
+        "Single-instance application handling",
+        "Published on the Microsoft Store"
+      ],
+      "tech": [
+        "C#",
+        ".NET",
+        "WPF",
+        "SQLite",
+        "MongoDB API",
+        "Sentry"
+      ],
+      "demo": {
+        "label": "Microsoft Store",
+        "url": "https://apps.microsoft.com/detail/9P7XCVB104JD"
+      },
+      "github": "https://github.com/Meettomb/FocusTrack",
+      "gradient": "linear-gradient(135deg,#1f2a44,#FF6B35)",
+      "screenshot": ""
+    },
+    {
+      "id": "voco",
+      "number": "02",
+      "featured": true,
+      "title": "VOCO",
+      "badge": "Full Stack Web Application",
+      "year": "2026",
+      "categories": ["Full Stack"],
+      "description": "A web-based native-language learning platform that makes learning interactive through structured lessons, vocabulary, grammar, examinations, and progress tracking.",
+      "features": [
+        "User authentication",
+        "Profile management",
+        "Language selection",
+        "Learning chapters",
+        "Vocabulary learning",
+        "MCQ examinations",
+        "Final assessments",
+        "Progress tracking",
+        "Certificate generation",
+        "OTP verification",
+        "Multilingual UI support",
+        "Profile image upload"
+      ],
+      "highlights": [
+        "MERN stack architecture",
+        "Separate frontend and backend",
+        "MongoDB Atlas integration",
+        "JWT authentication",
+        "RESTful API development"
+      ],
+      "tech": [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "React Router",
+        "i18next",
+        "JWT"
+      ],
+      "demo": {
+        "label": "Live demo",
+        "url": "https://voco-mern-six.vercel.app/"
+      },
+      "github": "https://github.com/Meettomb/Voco-MERN",
+      "gradient": "linear-gradient(135deg,#0f3d3a,#2a1f4d)",
+      "screenshot": ""
+    },
+    {
+      "id": "patternlab",
+      "number": "03",
+      "featured": false,
+      "title": "PatternLab",
+      "badge": "Creative Web Application",
+      "year": "",
+      "categories": ["Creative Web"],
+      "description": "A creative wallpaper and collage studio project focused on visual composition and interactive design.",
+      "features": [],
+      "highlights": [],
+      "tech": [],
+      "demo": {
+        "label": "Live demo",
+        "url": "https://meettomb.github.io/wallpaper-collage-studio/"
+      },
+      "github": "https://github.com/Meettomb/wallpaper-collage-studio",
+      "gradient": "repeating-linear-gradient(45deg,#3a1d12 0 14px,#FF6B35 14px 16px,#171717 16px 30px)",
+      "screenshot": ""
+    },
+    {
+      "id": "playme",
+      "number": "04",
+      "featured": false,
+      "title": "PlayMe",
+      "badge": ".NET Web Application",
+      "year": "2024",
+      "categories": ["Full Stack"],
+      "description": "A movie streaming platform built with ASP.NET Core MVC, featuring video playback, watchlists, and playback tracking.",
+      "features": [
+        "Movie browsing",
+        "Video playback",
+        "Watchlists",
+        "Playback tracking",
+        "Authentication",
+        "Subscription handling",
+        "Database-driven movie management"
+      ],
+      "highlights": [
+        "SQL Server for movies, users, and streaming analytics"
+      ],
+      "tech": [
+        "C#",
+        "ASP.NET Core MVC",
+        "SQL Server"
+      ],
+      "demo": null,
+      "github": "https://github.com/Meettomb/PlayMe-.Net-",
+      "gradient": "linear-gradient(135deg,#3b0d1a,#101010)",
+      "screenshot": ""
+    },
+    {
+      "id": "healthconnect",
+      "number": "05",
+      "featured": false,
+      "title": "HealthConnect",
+      "badge": "Healthcare Web Application",
+      "year": "2025",
+      "categories": ["Full Stack"],
+      "description": "A doctor–patient management platform supporting appointment booking, video consultations, patient management, and medicine ordering.",
+      "features": [
+        "Doctor appointments",
+        "Patient management",
+        "Video consultations",
+        "Medicine ordering",
+        "Prescription handling",
+        "Secure authentication",
+        "Cart and order management"
+      ],
+      "highlights": [
+        "Integrated e-commerce module for medicines",
+        "Structured data managed in SQL Server"
+      ],
+      "tech": [
+        "C#",
+        "ASP.NET Core",
+        "SQL Server"
+      ],
+      "demo": null,
+      "github": "https://github.com/Meettomb/HealthConnect",
+      "gradient": "linear-gradient(135deg,#0d3b3b,#1a1a2e)",
+      "screenshot": ""
+    },
+    {
+      "id": "internhunt",
+      "number": "06",
+      "featured": false,
+      "title": "InternHunt",
+      "badge": "Full Stack Web Application",
+      "year": "",
+      "categories": ["Full Stack"],
+      "description": "A web application project. TODO: add 1–2 sentences about what InternHunt does.",
+      "features": [],
+      "highlights": [],
+      "tech": [],
+      "demo": null,
+      "github": "https://github.com/Meettomb/InternHunt",
+      "gradient": "linear-gradient(135deg,#222,#3d2a1a)",
+      "screenshot": ""
+    },
+    {
+      "id": "laferrari",
+      "number": "07",
+      "featured": false,
+      "title": "LaFerrari 3D",
+      "badge": "Creative Frontend Development",
+      "year": "",
+      "categories": ["Creative Web"],
+      "description": "A visually engaging automotive website experiment featuring 3D-inspired presentation, animation, and immersive visual interactions.",
+      "features": [],
+      "highlights": [],
+      "tech": [],
+      "demo": {
+        "label": "Live demo",
+        "url": "https://meettomb.github.io/LaFerrari-3D-Animated-Website/"
+      },
+      "github": "https://github.com/Meettomb/LaFerrari-3D-Animated-Website",
+      "gradient": "linear-gradient(135deg,#5a0a0a,#101010 70%)",
+      "screenshot": ""
+    },
+    {
+      "id": "planteria",
+      "number": "08",
+      "featured": false,
+      "title": "Planteria",
+      "badge": "Web Development",
+      "year": "",
+      "categories": ["PHP"],
+      "description": "A web development project. TODO: add 1–2 sentences about what Planteria does.",
+      "features": [],
+      "highlights": [],
+      "tech": [],
+      "demo": null,
+      "github": "https://github.com/Meettomb/Planteria",
+      "gradient": "linear-gradient(135deg,#143d20,#101010)",
+      "screenshot": ""
+    },
+    {
+      "id": "coast-luxury-cars",
+      "number": "09",
+      "featured": false,
+      "title": "Coast Luxury Cars",
+      "badge": "Laravel Web Application",
+      "year": "",
+      "categories": [
+        "PHP",
+        "Full Stack"
+      ],
+      "description": "A luxury automotive web application developed using Laravel, focusing on a premium automotive website experience.",
+      "features": [],
+      "highlights": [
+        "Developed using Laravel",
+        "PHP-based backend architecture"
+      ],
+      "tech": [
+        "PHP",
+        "Laravel"
+      ],
+      "demo": null,
+      "github": "https://github.com/Meettomb/Coast_Luxury_Cars",
+      "gradient": "linear-gradient(135deg,#1c2833,#c9a24a55)",
+      "screenshot": ""
+    },
+    {
+      "id": "yma-travels",
+      "number": "10",
+      "featured": false,
+      "title": "YMA Travels",
+      "badge": "PHP Web Application",
+      "year": "",
+      "categories": ["PHP"],
+      "description": "A PHP-based web development project. TODO: add 1–2 sentences about its features.",
+      "features": [],
+      "highlights": [],
+      "tech": [
+        "PHP"
+      ],
+      "demo": null,
+      "github": "https://github.com/Meettomb/PHP_Prject",
+      "gradient": "linear-gradient(135deg,#1d2a5b,#4b2a6b)",
+      "screenshot": ""
+    }
+  ]
+}

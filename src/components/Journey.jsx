@@ -18,57 +18,57 @@ export default function Journey() {
     useEffect(() => {
         let ticking = false;
 
-      const update = () => {
-    ticking = false;
+        const update = () => {
+            ticking = false;
 
-    const list = listRef.current;
-    const track = trackRef.current;
-    const fill = fillRef.current;
-    const dots = dotRefs.current.filter(Boolean);
+            const list = listRef.current;
+            const track = trackRef.current;
+            const fill = fillRef.current;
+            const dots = dotRefs.current.filter(Boolean);
 
-    if (!list || !track || !fill || dots.length === 0) return;
+            if (!list || !track || !fill || dots.length === 0) return;
 
-    const vh = window.innerHeight;
-    const listTop = list.getBoundingClientRect().top;
+            const vh = window.innerHeight;
+            const listTop = list.getBoundingClientRect().top;
 
-    // Dot centers in viewport coordinates
-    const centers = dots.map((dot) => {
-        const r = dot.getBoundingClientRect();
-        return r.top + r.height / 2;
-    });
+            // Dot centers in viewport coordinates
+            const centers = dots.map((dot) => {
+                const r = dot.getBoundingClientRect();
+                return r.top + r.height / 2;
+            });
 
-    const firstCenter = centers[0];
+            const firstCenter = centers[0];
 
-    // End of the line = bottom of the last item's data (not the last dot)
-    const lastItem = list.lastElementChild;
-    const END_OFFSET = 0; // set a negative value (e.g. -20) to end slightly earlier
-    const lineEnd = lastItem.getBoundingClientRect().bottom + END_OFFSET;
+            // End of the line = bottom of the last item's data (not the last dot)
+            const lastItem = list.lastElementChild;
+            const END_OFFSET = 0; // set a negative value (e.g. -20) to end slightly earlier
+            const lineEnd = lastItem.getBoundingClientRect().bottom + END_OFFSET;
 
-    const totalHeight = Math.max(lineEnd - firstCenter, 0);
+            const totalHeight = Math.max(lineEnd - firstCenter, 0);
 
-    // Track runs from the first dot center to the end of the last item
-    track.style.top = `${firstCenter - listTop}px`;
-    track.style.height = `${totalHeight}px`;
+            // Track runs from the first dot center to the end of the last item
+            track.style.top = `${firstCenter - listTop}px`;
+            track.style.height = `${totalHeight}px`;
 
-    // Reference line (middle of the screen).
-    // Near the page bottom it slides down so the line can reach its end.
-    const docHeight = document.documentElement.scrollHeight;
-    const remaining = docHeight - (window.scrollY + vh);
-    const extra = Math.max(0, vh * 0.5 - remaining);
-    const refY = vh * 0.5 + extra;
+            // Reference line (middle of the screen).
+            // Near the page bottom it slides down so the line can reach its end.
+            const docHeight = document.documentElement.scrollHeight;
+            const remaining = docHeight - (window.scrollY + vh);
+            const extra = Math.max(0, vh * 0.5 - remaining);
+            const refY = vh * 0.5 + extra;
 
-    // Smooth progress: follows scroll (grows and shrinks)
-    const filled = Math.min(Math.max(refY - firstCenter, 0), totalHeight);
-    fill.style.height = `${filled}px`;
+            // Smooth progress: follows scroll (grows and shrinks)
+            const filled = Math.min(Math.max(refY - firstCenter, 0), totalHeight);
+            fill.style.height = `${filled}px`;
 
-    // Active dot = last dot the line has passed
-    let current = 0;
-    centers.forEach((c, i) => {
-        if (c <= refY) current = i;
-    });
+            // Active dot = last dot the line has passed
+            let current = 0;
+            centers.forEach((c, i) => {
+                if (c <= refY) current = i;
+            });
 
-    setActiveIndex((prev) => (prev === current ? prev : current));
-};
+            setActiveIndex((prev) => (prev === current ? prev : current));
+        };
 
         const onScroll = () => {
             if (!ticking) {
@@ -90,35 +90,35 @@ export default function Journey() {
 
     const compRef = useRef(null);
 
-      useLayoutEffect(() => {
-            const section = compRef.current;
-            if (!section) return;
-    
-            const aboutCtx = gsap.context(() => {
-    
-                const reveal = (selector, vars = {}) => {
-                    gsap.utils.toArray(selector).forEach((el) => {
-                        gsap.from(el, {
-                            y: 25,
-                            opacity: 0,
-                            duration: 0.6,
-                            ease: 'power2.out',
-                            ...vars,
-                            scrollTrigger: {
-                                trigger: el,
-                                start: 'top 85%',
-                                once: true,
-                            },
-                        });
+    useLayoutEffect(() => {
+        const section = compRef.current;
+        if (!section) return;
+
+        const aboutCtx = gsap.context(() => {
+
+            const reveal = (selector, vars = {}) => {
+                gsap.utils.toArray(selector).forEach((el) => {
+                    gsap.from(el, {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.6,
+                        ease: 'power2.out',
+                        ...vars,
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 85%',
+                            once: true,
+                        },
                     });
-                };
-    
-                reveal('.development_journey_title');
-    
-            }, section);
-    
-            return () => aboutCtx.revert();
-        }, []);
+                });
+            };
+
+            reveal('.development_journey_title');
+
+        }, section);
+
+        return () => aboutCtx.revert();
+    }, []);
 
 
     return (
@@ -136,14 +136,12 @@ export default function Journey() {
                     {journeyData.map((phase, index) => (
                         <div
                             key={phase.id}
-                            className={`journey_item ${
-                                activeIndex === index ? 'current' : ''
-                            } ${activeIndex >= index ? 'passed' : ''}`}
+                            className={`journey_item ${activeIndex === index ? 'current' : ''
+                                } ${activeIndex >= index ? 'passed' : ''}`}
                         >
                             <div
-                                className={`journey_dot ${
-                                    activeIndex >= index ? 'active' : ''
-                                }`}
+                                className={`journey_dot ${activeIndex >= index ? 'active' : ''
+                                    }`}
                                 ref={(el) => (dotRefs.current[index] = el)}
                             />
 
