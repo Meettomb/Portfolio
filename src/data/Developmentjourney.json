@@ -1,0 +1,49 @@
+{
+  "phases": [
+    {
+      "id": 1,
+      "title": "Frontend Development",
+      "skills": [
+        "HTML & CSS",
+        "JavaScript",
+        "Responsive Design",
+        "React.js",
+        "React Router"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Backend Development",
+      "skills": [
+        "Node.js",
+        "Express.js",
+        "PHP",
+        "Laravel",
+        "REST APIs",
+        "Authentication"
+      ]
+    },
+    {
+      "id": 3,
+      "title": ".NET Development",
+      "skills": [
+        "C#",
+        "ASP.NET Core",
+        "MVC Architecture",
+        "WPF",
+        "SQL Server",
+        "SQLite"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Full Stack Projects",
+      "skills": [
+        "Complete Web Applications",
+        "Database Integration",
+        "Authentication & Authorization",
+        "Desktop Applications"
+      ]
+    }
+  ]
+}

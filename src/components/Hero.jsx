@@ -279,9 +279,11 @@ export default function Hero() {
                         {/* Profile Image */}
                         <div className="blob-shape">
                             <img
-                                src="./assets/profile2.png"
+                                src="/assets/profile2.webp"
                                 alt="Meet Patel"
-                                loading="lazy"
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
                             />
                         </div>
 

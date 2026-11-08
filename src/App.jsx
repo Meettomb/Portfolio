@@ -8,6 +8,8 @@ import About from './components/About';
 import CustomCursor from './components/CustomCursor';
 import SmoothScroll from './components/SmoothScroll';
 import Loader from './components/Loader';
+import Journey from './components/Journey';
+import Projets from './components/Projets';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -61,7 +63,7 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter className="App">
             {isLoading && <Loader />}
 
             <SmoothScroll />
@@ -73,6 +75,8 @@ function App() {
                 <div id="smooth-content">
                     <Hero />
                     <About />
+                    <Journey />
+                    <Projets />
                     {/* Add Skills, Projects, Experience and Contact here */}
                 </div>
             </div>

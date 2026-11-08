@@ -9,43 +9,52 @@ export default function About() {
 
     useLayoutEffect(() => {
         const section = compRef.current;
-
         if (!section) return;
 
         const aboutCtx = gsap.context(() => {
-            const aboutTl = gsap.timeline({
+
+            const reveal = (selector, vars = {}) => {
+                gsap.utils.toArray(selector).forEach((el) => {
+                    gsap.from(el, {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.6,
+                        ease: 'power2.out',
+                        ...vars,
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 85%',
+                            once: true,
+                        },
+                    });
+                });
+            };
+
+            reveal('.AboutHeading');
+            reveal('.AboutLeftside');
+            reveal('.AboutQuote');
+
+            // Right side: each card animates in with a stagger,
+            // triggered when the column itself scrolls into view
+            gsap.from('.AboutRightside > div', {
+                y: 25,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.12,
+                ease: 'power2.out',
                 scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
+                    trigger: '.AboutRightside',
+                    start: 'top 85%',
                     once: true,
                 },
             });
 
-            aboutTl
-                .from('.AboutHeading', {
-                    y: 25,
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: 'power2.out',
-                })
-                .from('.AboutLeftside', {
-                    y: 25,
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: 'power2.out',
-                })
-                .from('.AboutRightside', {
-                    y: 25,
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: 'power2.out',
-                });
         }, section);
 
-        return () => {
-            aboutCtx.revert();
-        };
+        return () => aboutCtx.revert();
     }, []);
+
+    
 
     return (
         <>
@@ -88,6 +97,8 @@ export default function About() {
                     </div>
 
                 </section>
+
+                <p className="AboutQuote">Write clean code. Solve meaningful problems. Build products that people enjoy using.</p>
             </main>
         </>
     )
