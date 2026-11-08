@@ -5,19 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import navLinksData from '../data/navLinks.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const navLinks = [
-    { name: "Home", href: "#home", id: "home" },
-    { name: "About", href: "#about", id: "about" },
-    { name: "Journey", href: "#journey", id: "journey" },
-    { name: "Projects", href: "#projects", id: "projects" },
-    { name: "Skills", href: "#skills", id: "skills" },
-    { name: "Contact", href: "#contact", id: "contact" },
-];
 
 const Header = () => {
+    const navLinks = navLinksData;
     const headerRef = useRef(null);
     const headerVisibleRef = useRef(true);
     const [isOpen, setIsOpen] = useState(false);

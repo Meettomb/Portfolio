@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useLayoutEffect} from 'react'
 import { createPortal } from 'react-dom'
 import projects from '../data/projects.json'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { FaList, FaGrip } from 'react-icons/fa6';
+import gsap from 'gsap';
 
 // Gradient panel (or real screenshot if you add one in projects.json)
 function ProjectArt({ project }) {
@@ -22,6 +24,8 @@ export default function Projects() {
 
     const [selected, setSelected] = useState('All');
     const [zoom, setZoom] = useState(null);
+
+    const [layout, setLayout] = useState('list');
 
     const filteredProjects = selected === 'All'
         ? Projects
@@ -75,10 +79,96 @@ export default function Projects() {
     });
 
 
+
+     const compRef = useRef(null);
+    
+        useLayoutEffect(() => {
+            const section = compRef.current;
+            if (!section) return;
+    
+            const aboutCtx = gsap.context(() => {
+    
+                const reveal = (selector, vars = {}) => {
+                    gsap.utils.toArray(selector).forEach((el) => {
+                        gsap.from(el, {
+                            y: 25,
+                            opacity: 0,
+                            duration: 0.6,
+                            ease: 'power2.out',
+                            ...vars,
+                            scrollTrigger: {
+                                trigger: el,
+                                start: 'top 85%',
+                                once: true,
+                            },
+                        });
+                    });
+                };
+    
+                reveal('.projects_main_title');
+                reveal('.projects_category_section');
+                reveal('.project_layout_switcher');
+
+            }, section);
+    
+            return () => aboutCtx.revert();
+        }, []);
+
+        useLayoutEffect(() => {
+            const section = compRef.current;
+            if (!section) return;
+
+            const animationCtx = gsap.context(() => {
+                let visibleIndex = 0;
+
+                gsap.utils.toArray('.project_item').forEach((item) => {
+                    const rect = item.getBoundingClientRect();
+
+                    if (rect.bottom <= 0) return;
+
+                    const animation = {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.5,
+                        ease: 'power2.out',
+                    };
+
+                    if (rect.top < window.innerHeight) {
+                        gsap.fromTo(item, animation, {
+                            y: 0,
+                            opacity: 1,
+                            duration: animation.duration,
+                            ease: animation.ease,
+                            delay: visibleIndex * 0.1,
+                        });
+                        visibleIndex += 1;
+                        return;
+                    }
+
+                    gsap.fromTo(item, animation, {
+                        y: 0,
+                        opacity: 1,
+                        duration: animation.duration,
+                        ease: animation.ease,
+                        scrollTrigger: {
+                            trigger: item,
+                            start: 'top 85%',
+                            once: true,
+                        },
+                    });
+                });
+
+            }, section);
+
+            return () => animationCtx.revert();
+        }, [layout, selected]);
+    
+
     return (
         <>
-            <main className="projects_main" id="projects">
+            <main className="projects_main" id="projects" ref={compRef}>
                 <h1 className="projects_main_title">My Projects.</h1>
+
                 <section className="projects_category_section">
                     <ul>
                         <li key="all" {...catProps('All')}>All</li>
@@ -88,54 +178,108 @@ export default function Projects() {
                     </ul>
                 </section>
 
-                <section className="Project_listing_section">
-                    {filteredProjects.map((project) => (
-                        <article
-                            key={project.id}
-                            className={`project_item${project.featured ? ' project_item_featured' : ''}`}
-                        >
-                            <button
-                                type="button"
-                                className="project_preview"
-                                onClick={() => setZoom(project)}
-                                aria-label={`Zoom ${project.title} preview`}
-                            >
-                                <ProjectArt project={project} />
-                                <span className="project_number">{project.number}</span>
-                                <span className="project_zoom_hint">Zoom preview</span>
-                            </button>
+                <div className="project_layout_switcher">
+                    <button
+                        type="button"
+                        className={layout === 'list' ? 'active' : ''}
+                        onClick={() => setLayout('list')}
+                        aria-pressed={layout === 'list'}
+                        aria-label="List view"
+                    >
+                        <FaList />
+                    </button>
 
-                            <div className="project_info">
-                                <span className="project_badge">{project.badge}</span>
-                                <h2 className="project_title">{project.title}</h2>
-                                <p className="project_desc">{project.description}</p>
+                    <button
+                        type="button"
+                        className={layout === 'grid' ? 'active' : ''}
+                        onClick={() => setLayout('grid')}
+                        aria-pressed={layout === 'grid'}
+                        aria-label="Grid view"
+                    >
+                        <FaGrip />
+                    </button>
+                </div>
 
-                                {project.features.length > 0 && (
-                                    <ul className="project_features">
-                                        {project.features.map((f) => <li key={f}>{f}</li>)}
-                                    </ul>
-                                )}
+                <section className={`Project_listing_section ${layout}-layout`}>
+                    <div className="project_listing_grid">
+                        {filteredProjects.map((project) => (
+                            <article
+                                key={project.id}
+                                className={`project_item${project.featured ? ' project_item_featured' : ''}`}>
+                                <button
+                                    type="button"
+                                    className="project_preview"
+                                    onClick={() => setZoom(project)}
+                                    aria-label={`Zoom ${project.title} preview`}
+                                >
+                                    <ProjectArt project={project} />
 
-                                {project.tech.length > 0 && (
-                                    <ul className="project_tech">
-                                        {project.tech.map((t) => <li key={t}>{t}</li>)}
-                                    </ul>
-                                )}
+                                    <span className="project_number">
+                                        {project.number}
+                                    </span>
 
-                                <div className="project_links">
-                                    {project.demo && (
-                                        <a className="project_btn project_btn_primary" href={project.demo.url} target="_blank" rel="noopener noreferrer">
-                                            {project.demo.label} <span>↗</span>
-                                        </a>
+                                    {/* <span className="project_zoom_hint">
+                                        Zoom preview
+                                    </span> */}
+                                </button>
+
+                                <div className="project_info">
+                                    <span className="project_badge">
+                                        {project.badge}
+                                    </span>
+
+                                    <h2 className="project_title">
+                                        {project.title}
+                                    </h2>
+
+                                    <p className="project_desc">
+                                        {project.description}
+                                    </p>
+
+                                    {project.features.length > 0 && (
+                                        <ul className="project_features">
+                                            {project.features.map((f) => (
+                                                <li key={f}>{f}</li>
+                                            ))}
+                                        </ul>
                                     )}
-                                    <a className="project_btn" href={project.github} target="_blank" rel="noopener noreferrer">
-                                        {project.demo ? 'GitHub' : 'View on GitHub'} <span>↗</span>
-                                    </a>
+
+                                    {project.tech.length > 0 && (
+                                        <ul className="project_tech">
+                                            {project.tech.map((t) => (
+                                                <li key={t}>{t}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+
+                                    <div className="project_links">
+                                        {project.demo && (
+                                            <a
+                                                className="project_btn project_btn_primary"
+                                                href={project.demo.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {project.demo.label} <span>↗</span>
+                                            </a>
+                                        )}
+
+                                        <a
+                                            className="project_btn"
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {project.demo ? 'GitHub' : 'View on GitHub'}
+                                            <span>↗</span>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    ))}
+                            </article>
+                        ))}
+                    </div>
                 </section>
+
 
                 {zoom && createPortal(
                     <div

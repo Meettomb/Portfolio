@@ -1,4 +1,3 @@
-
 {
   "projects": [
     {
@@ -8,7 +7,9 @@
       "title": "FocusTrack",
       "badge": "Windows Desktop Application",
       "year": "2025",
-      "categories": ["Desktop"],
+      "categories": [
+        "Desktop"
+      ],
       "description": "A Windows productivity and screen-time tracking application designed to help users understand their application usage and improve their focus.",
       "features": [
         "Application usage tracking",
@@ -51,7 +52,9 @@
       "title": "VOCO",
       "badge": "Full Stack Web Application",
       "year": "2026",
-      "categories": ["Full Stack"],
+      "categories": [
+        "Full Stack"
+      ],
       "description": "A web-based native-language learning platform that makes learning interactive through structured lessons, vocabulary, grammar, examinations, and progress tracking.",
       "features": [
         "User authentication",
@@ -98,11 +101,28 @@
       "title": "PatternLab",
       "badge": "Creative Web Application",
       "year": "",
-      "categories": ["Creative Web"],
-      "description": "A creative wallpaper and collage studio project focused on visual composition and interactive design.",
-      "features": [],
-      "highlights": [],
-      "tech": [],
+      "categories": [
+        "Creative Web"
+      ],
+      "description": "A browser-based wallpaper collage maker built with HTML, CSS, and JavaScript. It allows users to create custom collages using multiple images, adjustable layouts, background colors, gradients, and Polaroid-style effects, with high-quality PNG export.",
+      "features": [
+        "Create custom wallpaper collages using multiple images",
+        "Adjustable collage layouts",
+        "Custom background colors and gradients",
+        "Polaroid-style image styling",
+        "High-quality PNG export"
+      ],
+      "highlights": [
+        "Browser-based collage creation tool",
+        "Interactive image customization",
+        "Flexible visual composition",
+        "High-quality PNG export"
+      ],
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "demo": {
         "label": "Live demo",
         "url": "https://meettomb.github.io/wallpaper-collage-studio/"
@@ -112,34 +132,35 @@
       "screenshot": ""
     },
     {
-      "id": "playme",
+      "id": "internhunt",
       "number": "04",
       "featured": false,
-      "title": "PlayMe",
-      "badge": ".NET Web Application",
-      "year": "2024",
-      "categories": ["Full Stack"],
-      "description": "A movie streaming platform built with ASP.NET Core MVC, featuring video playback, watchlists, and playback tracking.",
+      "title": "InternHunt",
+      "badge": "Android Application",
+      "year": "",
+      "categories": [
+        "Mobile Development"
+      ],
+      "description": "A free Android application built with Kotlin that helps students and job seekers discover and apply for internship opportunities directly from their mobile devices. It simplifies the internship search process through an accessible and user-friendly interface.",
       "features": [
-        "Movie browsing",
-        "Video playback",
-        "Watchlists",
-        "Playback tracking",
-        "Authentication",
-        "Subscription handling",
-        "Database-driven movie management"
+        "Search for internship opportunities",
+        "Explore internship listings",
+        "View available internship details",
+        "Apply for internships",
+        "Mobile-friendly user interface"
       ],
       "highlights": [
-        "SQL Server for movies, users, and streaming analytics"
+        "Free Android application",
+        "Built for students and job seekers",
+        "Simplified internship discovery and application process"
       ],
       "tech": [
-        "C#",
-        "ASP.NET Core MVC",
-        "SQL Server"
+        "Kotlin",
+        "Android"
       ],
       "demo": null,
-      "github": "https://github.com/Meettomb/PlayMe-.Net-",
-      "gradient": "linear-gradient(135deg,#3b0d1a,#101010)",
+      "github": "https://github.com/Meettomb/InternHunt",
+      "gradient": "linear-gradient(135deg,#222,#3d2a1a)",
       "screenshot": ""
     },
     {
@@ -149,7 +170,9 @@
       "title": "HealthConnect",
       "badge": "Healthcare Web Application",
       "year": "2025",
-      "categories": ["Full Stack"],
+      "categories": [
+        "Full Stack"
+      ],
       "description": "A doctor–patient management platform supporting appointment booking, video consultations, patient management, and medicine ordering.",
       "features": [
         "Doctor appointments",
@@ -175,20 +198,36 @@
       "screenshot": ""
     },
     {
-      "id": "internhunt",
+      "id": "playme",
       "number": "06",
       "featured": false,
-      "title": "InternHunt",
-      "badge": "Full Stack Web Application",
-      "year": "",
-      "categories": ["Full Stack"],
-      "description": "A web application project. TODO: add 1–2 sentences about what InternHunt does.",
-      "features": [],
-      "highlights": [],
-      "tech": [],
+      "title": "PlayMe",
+      "badge": ".NET Web Application",
+      "year": "2024",
+      "categories": [
+        "Full Stack"
+      ],
+      "description": "A movie streaming platform built with ASP.NET Core MVC, featuring video playback, watchlists, and playback tracking.",
+      "features": [
+        "Movie browsing",
+        "Video playback",
+        "Watchlists",
+        "Playback tracking",
+        "Authentication",
+        "Subscription handling",
+        "Database-driven movie management"
+      ],
+      "highlights": [
+        "SQL Server for movies, users, and streaming analytics"
+      ],
+      "tech": [
+        "C#",
+        "ASP.NET Core MVC",
+        "SQL Server"
+      ],
       "demo": null,
-      "github": "https://github.com/Meettomb/InternHunt",
-      "gradient": "linear-gradient(135deg,#222,#3d2a1a)",
+      "github": "https://github.com/Meettomb/PlayMe-.Net-",
+      "gradient": "linear-gradient(135deg,#3b0d1a,#101010)",
       "screenshot": ""
     },
     {
@@ -198,11 +237,27 @@
       "title": "LaFerrari 3D",
       "badge": "Creative Frontend Development",
       "year": "",
-      "categories": ["Creative Web"],
-      "description": "A visually engaging automotive website experiment featuring 3D-inspired presentation, animation, and immersive visual interactions.",
-      "features": [],
-      "highlights": [],
-      "tech": [],
+      "categories": [
+        "Creative Web"
+      ],
+      "description": "A 3D animated website showcasing the LaFerrari using Three.js. The project combines interactive 3D visuals, responsive design, and immersive animations to create an engaging automotive experience.",
+      "features": [
+        "Interactive 3D car presentation",
+        "Animated visual elements",
+        "Responsive website layout",
+        "Immersive automotive experience"
+      ],
+      "highlights": [
+        "3D LaFerrari showcase",
+        "Interactive Three.js experience",
+        "Immersive automotive web design"
+      ],
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Three.js"
+      ],
       "demo": {
         "label": "Live demo",
         "url": "https://meettomb.github.io/LaFerrari-3D-Animated-Website/"
@@ -216,13 +271,30 @@
       "number": "08",
       "featured": false,
       "title": "Planteria",
-      "badge": "Web Development",
+      "badge": "Laravel E-commerce Application",
       "year": "",
-      "categories": ["PHP"],
-      "description": "A web development project. TODO: add 1–2 sentences about what Planteria does.",
-      "features": [],
-      "highlights": [],
-      "tech": [],
+      "categories": [
+        "PHP",
+        "Full Stack"
+      ],
+      "description": "A Laravel-based e-commerce platform for gardening enthusiasts, offering plants, pots, seeds, gardening tools, and gardening packages. It includes a demonstration checkout experience and a user-friendly shopping interface.",
+      "features": [
+        "Browse plants, pots, and seeds",
+        "Explore gardening tools and packages",
+        "Product listings",
+        "Online shopping experience",
+        "Dummy checkout for purchase demonstration"
+      ],
+      "highlights": [
+        "Laravel-based e-commerce platform",
+        "Gardening-focused online shopping experience",
+        "Demonstration checkout workflow",
+        "Dedicated platform for gardening products"
+      ],
+      "tech": [
+        "PHP",
+        "Laravel"
+      ],
       "demo": null,
       "github": "https://github.com/Meettomb/Planteria",
       "gradient": "linear-gradient(135deg,#143d20,#101010)",
@@ -239,11 +311,19 @@
         "PHP",
         "Full Stack"
       ],
-      "description": "A luxury automotive web application developed using Laravel, focusing on a premium automotive website experience.",
-      "features": [],
+      "description": "An online luxury car platform where users can explore detailed vehicle listings and purchase premium automobiles. It provides a convenient shopping experience with digital receipts generated after successful purchases.",
+      "features": [
+        "Browse luxury car listings",
+        "View detailed vehicle information",
+        "Explore premium automobiles",
+        "Purchase luxury vehicles online",
+        "Generate digital receipts after purchases"
+      ],
       "highlights": [
-        "Developed using Laravel",
-        "PHP-based backend architecture"
+        "Luxury automotive e-commerce platform",
+        "Laravel-based web application",
+        "Online vehicle purchasing workflow",
+        "Digital transaction receipts"
       ],
       "tech": [
         "PHP",
@@ -261,10 +341,20 @@
       "title": "YMA Travels",
       "badge": "PHP Web Application",
       "year": "",
-      "categories": ["PHP"],
-      "description": "A PHP-based web development project. TODO: add 1–2 sentences about its features.",
-      "features": [],
-      "highlights": [],
+      "categories": [
+        "PHP"
+      ],
+      "description": "An online flight ticket booking website developed using PHP. This was my first PHP web development project, introducing me to server-side web development and online booking workflows.",
+      "features": [
+        "Online flight ticket booking",
+        "Flight booking interface",
+        "Web-based booking experience"
+      ],
+      "highlights": [
+        "My first PHP web development project",
+        "Online flight booking platform",
+        "Introduction to PHP-based web development"
+      ],
       "tech": [
         "PHP"
       ],

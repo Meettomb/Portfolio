@@ -5,11 +5,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Download } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
+import navLinksData from '../data/navLinks.json';
 
 // Register GSAP Plugins
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function Hero() {
+    const navLinks = navLinksData;
     const compRef = useRef(null);
     const overviewRef = useRef(null);
 
@@ -173,6 +175,21 @@ export default function Hero() {
     }, []);
 
 
+    const scrollToSection = (e, href) => {
+        e.preventDefault();
+
+        const smoother = window.__smoother;
+
+        if (smoother) {
+            smoother.scrollTo(href, true, 'top 80px');
+        } else {
+            document.querySelector(href)?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <>
             {/* =================================
@@ -220,6 +237,10 @@ export default function Hero() {
                             href="#projects"
                             className="hero-btn"
                             data-cursor="hover"
+                            onClick={(e) => scrollToSection(
+                                e,
+                                navLinks.find((link) => link.id === 'projects')?.href || '#projects'
+                            )}
                         >
                             View My Work
                         </a>
