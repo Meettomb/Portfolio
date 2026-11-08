@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
-import DevelopmentJourney from '../data/DevelopmentJourney.json';
+import DevelopmentJourney from '../data/Developmentjourney.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
