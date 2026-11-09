@@ -37,6 +37,12 @@
         "MongoDB API",
         "Sentry"
       ],
+      "programmingLanguages": [
+        "C#"
+      ],
+      "developmentAreas": [
+        "Desktop Development"
+      ],
       "demo": {
         "label": "Microsoft Store",
         "url": "https://apps.microsoft.com/detail/9P7XCVB104JD"
@@ -86,6 +92,14 @@
         "i18next",
         "JWT"
       ],
+      "programmingLanguages": [
+        "JavaScript"
+      ],
+      "developmentAreas": [
+        "Full Stack",
+        "Frontend",
+        "Backend"
+      ],
       "demo": {
         "label": "Live demo",
         "url": "https://voco-mern-six.vercel.app/"
@@ -123,6 +137,12 @@
         "CSS",
         "JavaScript"
       ],
+      "programmingLanguages": [
+        "JavaScript"
+      ],
+      "developmentAreas": [
+        "Frontend"
+      ],
       "demo": {
         "label": "Live demo",
         "url": "https://meettomb.github.io/wallpaper-collage-studio/"
@@ -158,6 +178,12 @@
         "Kotlin",
         "Android"
       ],
+      "programmingLanguages": [
+        "Kotlin"
+      ],
+      "developmentAreas": [
+        "Mobile Development"
+      ],
       "demo": null,
       "github": "https://github.com/Meettomb/InternHunt",
       "gradient": "linear-gradient(135deg,#222,#3d2a1a)",
@@ -192,6 +218,13 @@
         "ASP.NET Core",
         "SQL Server"
       ],
+      "programmingLanguages": [
+        "C#"
+      ],
+      "developmentAreas": [
+        "Full Stack",
+        "Backend"
+      ],
       "demo": null,
       "github": "https://github.com/Meettomb/HealthConnect",
       "gradient": "linear-gradient(135deg,#0d3b3b,#1a1a2e)",
@@ -225,6 +258,13 @@
         "ASP.NET Core MVC",
         "SQL Server"
       ],
+      "programmingLanguages": [
+        "C#"
+      ],
+      "developmentAreas": [
+        "Full Stack",
+        "Backend"
+      ],
       "demo": null,
       "github": "https://github.com/Meettomb/PlayMe-.Net-",
       "gradient": "linear-gradient(135deg,#3b0d1a,#101010)",
@@ -257,6 +297,13 @@
         "CSS",
         "JavaScript",
         "Three.js"
+      ],
+      "programmingLanguages": [
+        "JavaScript"
+      ],
+      "developmentAreas": [
+        "Frontend",
+        "3D Web"
       ],
       "demo": {
         "label": "Live demo",
@@ -295,6 +342,13 @@
         "PHP",
         "Laravel"
       ],
+      "programmingLanguages": [
+        "PHP"
+      ],
+      "developmentAreas": [
+        "Backend",
+        "Full Stack"
+      ],
       "demo": null,
       "github": "https://github.com/Meettomb/Planteria",
       "gradient": "linear-gradient(135deg,#143d20,#101010)",
@@ -329,6 +383,13 @@
         "PHP",
         "Laravel"
       ],
+      "programmingLanguages": [
+        "PHP"
+      ],
+      "developmentAreas": [
+        "Backend",
+        "Full Stack"
+      ],
       "demo": null,
       "github": "https://github.com/Meettomb/Coast_Luxury_Cars",
       "gradient": "linear-gradient(135deg,#1c2833,#c9a24a55)",
@@ -357,6 +418,12 @@
       ],
       "tech": [
         "PHP"
+      ],
+      "programmingLanguages": [
+        "PHP"
+      ],
+      "developmentAreas": [
+        "Backend"
       ],
       "demo": null,
       "github": "https://github.com/Meettomb/PHP_Prject",

@@ -594,7 +594,6 @@ body {
   background: transparent;
   border: none;
   color: var(--color-orange);
-  cursor: pointer;
   padding: 0.5rem;
   align-items: center;
   justify-content: center;
@@ -746,7 +745,6 @@ body {
   font-size: 0.85rem;
   font-weight: 700;
   border-radius: 6px;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -1459,7 +1457,6 @@ body {
 
 /* ===== Projects: category pills (extras only) ===== */
 .projects_main .projects_category_section ul li {
-  cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
@@ -1500,7 +1497,6 @@ body {
   color: var(--text-secondary);
 
   font-size: 1.2rem;
-  cursor: pointer;
 
   transition:
     background 0.3s ease,

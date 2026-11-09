@@ -1,4 +1,3 @@
-
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,6 +5,7 @@ import { TextPlugin } from 'gsap/TextPlugin';
 import { Download } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import navLinksData from '../data/navLinks.json';
+import Projects from '../data/projects.json';
 
 // Register GSAP Plugins
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -18,6 +18,16 @@ export default function Hero() {
     const textRef = useRef(null);
     const cursorRef = useRef(null);
     const imageRef = useRef(null);
+
+    const projects = Projects.projects
+    const Totalprojects = projects.length
+    const ProgrammingLanguages = new Set(
+        projects.flatMap((project) => project.programmingLanguages ?? [])
+    ).size
+
+    const DevelopmentAreas = new Set(
+        projects.flatMap((project) => project.developmentAreas ?? [])
+    ).size
 
     const titles = [
         'Full Stack Developer',
@@ -78,7 +88,7 @@ export default function Hero() {
                     opacity: 0,
                     duration: 0.8,
                     ease: 'back.out(1)',
-                }, 0);
+                }, 0.8);
 
 
             // 2. Subtle Floating Animation
@@ -329,7 +339,7 @@ export default function Hero() {
                     <div className="total_project">
 
                         <p id="total-projects">
-                            10
+                            {Totalprojects}
                         </p>
 
                         <p>
@@ -341,7 +351,7 @@ export default function Hero() {
 
                     <div className="total_language_used">
 
-                        <p id='total-language-used'>5</p>
+                        <p id='total-language-used'>{ProgrammingLanguages}</p>
 
                         <p>
                             Programming languages
@@ -352,7 +362,7 @@ export default function Hero() {
 
                     <div className="total_development_areas">
 
-                        <p id='devlopment-areas'>4</p>
+                        <p id='devlopment-areas'>{DevelopmentAreas}</p>
 
                         <p>
                             Development areas
@@ -366,7 +376,7 @@ export default function Hero() {
                         <p>MERN &amp; .Net</p>
 
                         <p>
-                            Specialization Domain
+                            Ecosystem
                         </p>
 
                     </div>
