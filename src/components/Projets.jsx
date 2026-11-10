@@ -7,15 +7,50 @@ import gsap from 'gsap';
 
 // Gradient panel (or real screenshot if you add one in projects.json)
 function ProjectArt({ project }) {
+    const [videoFailed, setVideoFailed] = useState(false);
+
+    // Existing screenshot support
     if (project.screenshot) {
-        return <img className="project_art_img" src={project.screenshot} alt={`${project.title} screenshot`} loading="lazy" />
+        return (
+            <img
+                className="project_art_img"
+                src={project.screenshot}
+                alt={`${project.title} screenshot`}
+                loading="lazy"
+            />
+        );
     }
-    return (
+
+    // Fallback artwork
+    const fallbackArt = (
         <div className="project_art" style={{ background: project.gradient }}>
-            <div className="project_art_bar"><i></i><i></i><i></i></div>
+            <div className="project_art_bar">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
             <div className="project_art_title">{project.title}</div>
         </div>
-    )
+    );
+
+    // No video or video failed
+    if (!project.videoLink || videoFailed) {
+        return fallbackArt;
+    }
+
+    return (
+        <div className="project_video_wrapper">
+            <video
+                className="project_video"
+                src={project.videoLink}
+                autoPlay
+                muted
+                loop
+                playsInline
+                onError={() => setVideoFailed(true)}
+            />
+        </div>
+    );
 }
 
 export default function Projects() {
