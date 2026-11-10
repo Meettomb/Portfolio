@@ -10,6 +10,7 @@ import SmoothScroll from './components/SmoothScroll';
 import Loader from './components/Loader';
 import Journey from './components/Journey';
 import Projets from './components/Projets';
+import TechnicalSkills from './components/TechnicalSkills'
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -77,6 +78,7 @@ function App() {
                     <About />
                     <Journey />
                     <Projets />
+                    <TechnicalSkills/>
                     {/* Add Skills, Projects, Experience and Contact here */}
                 </div>
             </div>

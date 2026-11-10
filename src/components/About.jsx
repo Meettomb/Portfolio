@@ -54,7 +54,7 @@ export default function About() {
         return () => aboutCtx.revert();
     }, []);
 
-    
+
 
     return (
         <>
@@ -89,10 +89,9 @@ export default function About() {
                             <b>Desktop</b>
                             <p>Windows applications using C# and .NET.</p>
                         </div>
-
                         <div>
-                            <b>PHP</b>
-                            <p>PHP-based web development and Laravel.</p>
+                            <b>Mobile App Development</b>
+                            <p>Native Android app development using Kotlin.</p>
                         </div>
                     </div>
 

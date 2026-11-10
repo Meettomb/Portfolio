@@ -1,0 +1,230 @@
+{
+    "skills": [
+        {
+            "id": "javascript",
+            "name": "JavaScript",
+            "category": "Language"
+        },
+        {
+            "id": "csharp",
+            "name": "C#",
+            "category": "Language"
+        },
+        {
+            "id": "php",
+            "name": "PHP",
+            "category": "Language"
+        },
+        {
+            "id": "kotlin",
+            "name": "Kotlin",
+            "category": "Language"
+        },
+        {
+            "id": "html",
+            "name": "HTML",
+            "category": "Language"
+        },
+        {
+            "id": "css",
+            "name": "CSS",
+            "category": "Language"
+        },
+        {
+            "id": "nodejs",
+            "name": "Node.js",
+            "category": "Backend & Framework"
+        },
+        {
+            "id": "express",
+            "name": "Express.js",
+            "category": "Backend & Framework"
+        },
+        {
+            "id": "aspnet-core",
+            "name": "ASP.NET Core",
+            "category": "Backend & Framework"
+        },
+        {
+            "id": "wpf",
+            "name": "WPF",
+            "category": "Backend & Framework"
+        },
+        {
+            "id": "dotnet",
+            "name": ".NET",
+            "category": "Backend & Framework"
+        },
+        {
+            "id": "react",
+            "name": "React.js",
+            "category": "Frontend"
+        },
+        {
+            "id": "react-router",
+            "name": "React Router",
+            "category": "Frontend"
+        },
+        {
+            "id": "i18next",
+            "name": "i18next",
+            "category": "Frontend"
+        },
+        {
+            "id": "vite",
+            "name": "Vite",
+            "category": "Frontend"
+        },
+        {
+            "id": "gsap",
+            "name": "GSAP",
+            "category": "Frontend"
+        },
+        {
+            "id": "tailwind",
+            "name": "Tailwind CSS",
+            "category": "Frontend"
+        },
+        {
+            "id": "bootstrap",
+            "name": "Bootstrap",
+            "category": "Frontend"
+        },
+        {
+            "id": "threejs",
+            "name": "Three.js",
+            "category": "Frontend"
+        },
+        {
+            "id": "mongodb",
+            "name": "MongoDB",
+            "category": "Databases"
+        },
+        {
+            "id": "ssms",
+            "name": "SSMS",
+            "category": "Databases"
+        },
+        {
+            "id": "mysql",
+            "name": "MySQL",
+            "category": "Databases"
+        },
+        {
+            "id": "sqlite",
+            "name": "SQLite",
+            "category": "Databases"
+        },
+        {
+            "id": "sql",
+            "name": "SQL",
+            "category": "Databases"
+        },
+        {
+            "id": "vscode",
+            "name": "VS Code",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "visual-studio",
+            "name": "Visual Studio",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "git",
+            "name": "Git",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "github",
+            "name": "GitHub",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "postman",
+            "name": "Postman",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "jira",
+            "name": "Jira",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "vercel",
+            "name": "Vercel",
+            "category": "Dev Tools"
+        },
+        {
+            "id": "android-studio",
+            "name": "Android Studio",
+            "category": "Dev Tools"
+        }       
+    ],
+    "concepts":[
+         {
+            "id": "responsive-design",
+            "name": "Responsive Design"
+        },
+         {
+            "id": "rest-apis",
+            "name": "REST APIs"
+        },
+        {
+            "id": "mvc",
+            "name": "MVC"
+        },
+        {
+            "id": "authentication",
+            "name": "Authentication"
+        },
+        {
+            "id": "authorization",
+            "name": "Authorization"
+        },
+        {
+            "id": "crud",
+            "name": "CRUD"
+        },
+        {
+            "id": "jwt",
+            "name": "JWT"
+        },
+        {
+            "id": "otp",
+            "name": "OTP Verification"
+        },
+        {
+            "id": "mern",
+            "name": "MERN Stack"
+        },
+        {
+            "id": "full-stack",
+            "name": "Full-Stack Development"
+        },
+        {
+            "id": "state-management",
+            "name": "State Management"
+        },
+        {
+            "id": "component-architecture",
+            "name": "Component-Based Architecture"
+        },
+        {
+            "id": "caching",
+            "name": "Caching"
+        },
+        {
+            "id": "api-integration",
+            "name": "API Integration"
+        },
+        {
+            "id": "database-design",
+            "name": "Database Design"
+        },
+        {
+            "id": "debugging",
+            "name": "Debugging & Error Handling"
+        }
+    ]
+}

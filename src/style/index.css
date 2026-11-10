@@ -1854,7 +1854,8 @@ body {
   .project_features {
     columns: 1;
   }
-  .project_layout_switcher{
+
+  .project_layout_switcher {
     display: none;
   }
 }
@@ -1994,5 +1995,184 @@ body {
 
   .Project_listing_section.grid-layout .project_item:hover {
     transform: none;
+  }
+}
+
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* TechnicalSkills */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* TechnicalSkills — one section, two compartments                                          */
+/* Same language as About / Journey / Projects: hairline top border, open layout, no boxes  */
+/* Replace the whole old TechnicalSkills block in index.css with this                       */
+/* ======================================================================================== */
+
+.technical_skills_main {
+  padding: 3rem 8%;
+  border-top: 1px solid var(--border-muted);
+  margin-top: 5rem;
+}
+
+/* The only big title of the section (same as the other sections) */
+.technical_skills_main h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+/* ---------- Two compartments: title on the left, content on the right ---------- */
+.technical_skills_main .skills_compartment,
+.technical_skills_main .concepts_compartment {
+  /* display: grid; */
+  /* grid-template-columns: minmax(150px, 1fr) 4fr;
+  gap: 2rem; */
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-muted);
+}
+
+.technical_skills_main .compartment_title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.technical_skills_main .compartment_body {
+  min-width: 0;
+}
+
+/* ---------- Compartment 1: category pills (same look as Projects filter) ---------- */
+.technical_skills_main .filter_category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.technical_skills_main .skill_tab {
+  padding: 10px 20px;
+  font-family: var(--font-primary);
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1.5px solid var(--border-muted);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.technical_skills_main .skill_tab:hover {
+  color: var(--text-primary);
+  border-color: var(--color-white);
+}
+
+.technical_skills_main .skill_tab:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+.technical_skills_main .skill_tab.Skill_Cat_selected {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+/* ---------- Compartment 1: skills as one connected hairline grid ---------- */
+.technical_skills_main .skill_list ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  border-top: 1px solid var(--border-muted);
+  border-left: 1px solid var(--border-muted);
+  animation: skillsSwap 0.3s ease both;
+}
+
+.technical_skills_main .skill_list li {
+  padding: 1.6rem 1.5rem;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  color: var(--text-primary);
+  border-right: 1px solid var(--border-muted);
+  border-bottom: 1px solid var(--border-muted);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.technical_skills_main .skill_list li:hover {
+  color: var(--color-orange);
+  background: rgba(252, 163, 17, 0.06);
+}
+
+/* ---------- Compartment 2: concepts as a plain ruled list ---------- */
+/* ---------- Compartment 2: concepts as compact tags ---------- */
+.technical_skills_main .concepts_list ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.technical_skills_main .concepts_list li {
+  padding: 0.65rem 1.15rem;
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  white-space: nowrap;
+  color: var(--text-secondary);
+  background: rgba(20, 33, 61, 0.35);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.technical_skills_main .concepts_list li:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+  border-color: var(--color-orange);
+}
+
+/* ---------- Animation (only when the person switches category) ---------- */
+@keyframes skillsSwap {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px) {
+  .technical_skills_main .skills_compartment,
+  .technical_skills_main .concepts_compartment {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .technical_skills_main .skill_list ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technical_skills_main .skill_list li {
+    padding: 1.2rem 1rem;
+  }
+
+  .technical_skills_main .concepts_list ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technical_skills_main .skill_list ul {
+    animation: none;
+  }
+
+  .technical_skills_main .skill_tab,
+  .technical_skills_main .skill_list li,
+  .technical_skills_main .concepts_list li {
+    transition: none;
   }
 }
