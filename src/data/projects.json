@@ -115,6 +115,7 @@
       "featured": false,
       "title": "PatternLab",
       "badge": "Creative Web Application",
+      "videoLink":"./assets/Videos/PatternLab.mp4",
       "year": "",
       "categories": [
         "Creative Web"
@@ -196,6 +197,7 @@
       "featured": false,
       "title": "HealthConnect",
       "badge": "Healthcare Web Application",
+      "videoLink":"./assets/Videos/HealthConnect-Project.mp4",
       "year": "2025",
       "categories": [
         "Full Stack"
@@ -237,6 +239,7 @@
       "featured": false,
       "title": "PlayMe",
       "badge": ".NET Web Application",
+      "videoLink":"./assets/Videos/PlayMe-Project.mp4",
       "year": "2024",
       "categories": [
         "Full Stack"
