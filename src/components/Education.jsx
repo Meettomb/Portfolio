@@ -1,12 +1,45 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import educationData from '../data/education.json'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Education() {
     const items = educationData.education;
+    const compRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const section = compRef.current;
+        if (!section) return;
+
+        const educationCtx = gsap.context(() => {
+            const reveal = (selector) => {
+                gsap.utils.toArray(selector).forEach((element) => {
+                    gsap.from(element, {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.6,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 85%',
+                            once: true,
+                        },
+                    });
+                });
+            };
+
+            reveal('.education_main_heading');
+            reveal('.education_item');
+        }, section);
+
+        return () => educationCtx.revert();
+    }, []);
 
     return (
         <>
-            <main className="education_main" id="education">
+            <main className="education_main" id="education" ref={compRef}>
                 <h1 className="education_main_heading">Education.</h1>
 
                 <section className="education_list">
