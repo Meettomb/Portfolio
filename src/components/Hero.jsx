@@ -280,7 +280,7 @@ export default function Hero({ startAnimation }) {
                         </a>
 
                         <a
-                            href="./Meet_Patel.pdf"
+                            href="./Meet-Patel-Resume.pdf"
                             download="Meet-Patel-Resume.pdf"
                             className="hero-btn-secondary"
                             data-cursor="hover"
