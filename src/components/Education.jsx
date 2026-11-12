@@ -40,7 +40,9 @@ export default function Education() {
     return (
         <>
             <main className="education_main" id="education" ref={compRef}>
-                <h1 className="education_main_heading">Education.</h1>
+                <h1 className="education_main_heading section_heading">
+                    A foundation for <em>what comes next</em>.
+                </h1>
 
                 <section className="education_list">
                     {items.map((item) => (

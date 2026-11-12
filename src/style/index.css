@@ -29,7 +29,7 @@ a {
   --bg-primary: var(--color-black);
   --bg-secondary: var(--color-navy);
   --bg-tertiary: #1C2C4A;
-  --bg-card: #14213D;
+  --bg-card: rgba(20, 33, 61, 0.25);
   --bg-card-hover: #1C2C4A;
   --bg-elevated: #202D45;
   --bg-overlay: rgba(0, 0, 0, 0.75);
@@ -149,6 +149,30 @@ body {
   width: 100%;
   overflow: visible;
 }
+
+
+
+
+
+.section_heading,
+.contact_main .contact_main_heading {
+  max-width: 1000px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-orange);
+  margin-top: 5rem;
+}
+
+.section_heading em,
+.contact_main .contact_main_heading em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+
+
 
 /* ======================================================================================== */
 /* ======================================================================================== */
@@ -1089,14 +1113,6 @@ body {
   margin-top: 5rem;
 }
 
-.AboutSectionMain h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--color-orange);
-  margin-top: 5rem;
-}
 
 .AboutSectionMain .AboutContent {
   display: flex;
@@ -1248,15 +1264,6 @@ body {
   margin-top: 5rem;
 }
 
-.journey_main h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--color-orange);
-  margin-top: 5rem;
-}
-
 .journey_section {
   margin-top: 5rem;
 }
@@ -1398,15 +1405,6 @@ body {
 .projects_main {
   padding: 3rem 8%;
   border-top: 1px solid var(--border-muted);
-  margin-top: 5rem;
-}
-
-.projects_main .projects_main_title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--color-orange);
   margin-top: 5rem;
 }
 
@@ -2016,14 +2014,7 @@ body {
   margin-top: 5rem;
 }
 
-/* The only big title of the section (same as the other sections) */
-.technical_skills_main h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--color-orange);
-  margin-top: 5rem;
+.technical_skills_main .section_heading {
   margin-bottom: 3rem;
 }
 
@@ -2201,15 +2192,6 @@ body {
   margin-top: 5rem;
 }
 
-.education_main h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--color-orange);
-  margin-top: 5rem;
-}
-
 .education_main .education_list {
   margin-top: 3rem;
 }
@@ -2360,16 +2342,6 @@ body {
   margin-top: 5rem;
 }
 
-.certifications_main h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--color-orange);
-  margin-top: 5rem;
-}
-
-
 .certifications_main .certifications_list {
   margin-top: 3rem;
   display: grid;
@@ -2384,7 +2356,7 @@ body {
   padding: clamp(1.3rem, 2.5vw, 2rem);
   border: 1px solid var(--border-muted);
   border-radius: 14px;
-  background: rgba(20, 33, 61, 0.25);
+  background: var(--bg-card);
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -2525,5 +2497,244 @@ body {
 
   .certifications_main .certification_item:hover {
     transform: none;
+  }
+}
+
+
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* Contact */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* ======================================================================================== */
+/* Contact */
+/* ======================================================================================== */
+.contact_main {
+  width: 100%;
+  padding: 3rem 8%;
+  border-top: 1px solid var(--border-muted);
+  margin-top: 5rem;
+}
+
+.contact_main .contact_main_sub {
+  max-width: 640px;
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ----- big email ----- */
+.contact_main .contact_email {
+  display: inline-block;
+  margin-top: 3rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3.4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+  border-bottom: 2px solid var(--color-orange);
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.contact_main .contact_email:hover {
+  color: var(--color-orange);
+}
+
+.contact_main .contact_email:focus-visible,
+.contact_main .contact_link_row:focus-visible,
+.contact_main .contact_btn:focus-visible,
+.contact_main .contact_top:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+/* ----- buttons ----- */
+.contact_main .contact_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+.contact_main .contact_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid var(--border-muted);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+.contact_main .contact_btn span {
+  transition: transform 0.25s ease;
+}
+
+.contact_main .contact_btn:hover {
+  border-color: var(--color-orange);
+}
+
+.contact_main .contact_btn:hover span {
+  transform: translate(4px, -3px);
+}
+
+.contact_main .contact_btn:active {
+  transform: scale(0.96);
+}
+
+.contact_main .contact_btn_primary {
+  background: var(--button-primary-bg);
+  border-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.contact_main .contact_btn_primary:hover {
+  background: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.contact_main .contact_copy_status {
+  display: block;
+  min-height: 1.4em;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--color-orange);
+}
+
+/* ----- link columns (side by side) ----- */
+.contact_main .contact_links {
+  list-style: none;
+  margin-top: 3.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.contact_main .contact_links li {
+  border-top: 1px solid var(--border-muted);
+}
+
+.contact_main .contact_link_row {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;   /* text | arrow */
+  align-items: center;
+  gap: 0.6rem 1rem;
+  padding: 1.5rem 0;
+}
+
+.contact_main .contact_link_label {
+  grid-column: 1 / -1;               /* label takes the full top line */
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.contact_main .contact_link_text {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+  transition: color 0.3s ease;
+}
+
+.contact_main .contact_link_arrow {
+  font-size: 1.2rem;
+  color: var(--color-orange);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.contact_main .contact_link_row:hover .contact_link_text,
+.contact_main .contact_link_row:hover .contact_link_arrow {
+  color: var(--color-orange);
+}
+
+.contact_main .contact_link_row:hover .contact_link_arrow {
+  transform: translate(4px, -4px);
+}
+
+
+/* ----- footer line ----- */
+.contact_main .contact_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 4rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.contact_main .contact_top {
+  color: var(--color-orange);
+}
+
+.contact_main .contact_top:hover {
+  text-decoration: underline;
+}
+
+
+/* Tablet and mobile: columns become stacked rows */
+@media (max-width: 900px) {
+  .contact_main .contact_links {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact_main .contact_links li {
+    border-top: none;
+  }
+
+  .contact_main .contact_links li:first-child {
+    border-top: 1px solid var(--border-muted);
+  }
+
+  .contact_main .contact_link_row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
+  }
+
+  .contact_main .contact_link_label {
+    flex: 0 0 100%;
+  }
+
+  .contact_main .contact_link_text {
+    flex: 1;
+  }
+
+  .contact_main .contact_link_arrow {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact_main {
+    padding: 3rem 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact_main .contact_email,
+  .contact_main .contact_btn,
+  .contact_main .contact_btn span,
+  .contact_main .contact_link_text,
+  .contact_main .contact_link_arrow {
+    transition: none;
   }
 }

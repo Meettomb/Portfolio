@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect} from 'react'
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { createPortal } from 'react-dom'
 import projects from '../data/projects.json'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
@@ -115,94 +115,96 @@ export default function Projects() {
 
 
 
-     const compRef = useRef(null);
-    
-        useLayoutEffect(() => {
-            const section = compRef.current;
-            if (!section) return;
-    
-            const aboutCtx = gsap.context(() => {
-    
-                const reveal = (selector, vars = {}) => {
-                    gsap.utils.toArray(selector).forEach((el) => {
-                        gsap.from(el, {
-                            y: 25,
-                            opacity: 0,
-                            duration: 0.6,
-                            ease: 'power2.out',
-                            ...vars,
-                            scrollTrigger: {
-                                trigger: el,
-                                start: 'top 85%',
-                                once: true,
-                            },
-                        });
-                    });
-                };
-    
-                reveal('.projects_main_title');
-                reveal('.projects_category_section');
-                reveal('.project_layout_switcher');
+    const compRef = useRef(null);
 
-            }, section);
-    
-            return () => aboutCtx.revert();
-        }, []);
+    useLayoutEffect(() => {
+        const section = compRef.current;
+        if (!section) return;
 
-        useLayoutEffect(() => {
-            const section = compRef.current;
-            if (!section) return;
+        const aboutCtx = gsap.context(() => {
 
-            const animationCtx = gsap.context(() => {
-                let visibleIndex = 0;
-
-                gsap.utils.toArray('.project_item').forEach((item) => {
-                    const rect = item.getBoundingClientRect();
-
-                    if (rect.bottom <= 0) return;
-
-                    const animation = {
+            const reveal = (selector, vars = {}) => {
+                gsap.utils.toArray(selector).forEach((el) => {
+                    gsap.from(el, {
                         y: 25,
                         opacity: 0,
-                        duration: 0.5,
+                        duration: 0.6,
                         ease: 'power2.out',
-                    };
-
-                    if (rect.top < window.innerHeight) {
-                        gsap.fromTo(item, animation, {
-                            y: 0,
-                            opacity: 1,
-                            duration: animation.duration,
-                            ease: animation.ease,
-                            delay: visibleIndex * 0.1,
-                        });
-                        visibleIndex += 1;
-                        return;
-                    }
-
-                    gsap.fromTo(item, animation, {
-                        y: 0,
-                        opacity: 1,
-                        duration: animation.duration,
-                        ease: animation.ease,
+                        ...vars,
                         scrollTrigger: {
-                            trigger: item,
+                            trigger: el,
                             start: 'top 85%',
                             once: true,
                         },
                     });
                 });
+            };
 
-            }, section);
+            reveal('.projects_main_title');
+            reveal('.projects_category_section');
+            reveal('.project_layout_switcher');
 
-            return () => animationCtx.revert();
-        }, [layout, selected]);
-    
+        }, section);
+
+        return () => aboutCtx.revert();
+    }, []);
+
+    useLayoutEffect(() => {
+        const section = compRef.current;
+        if (!section) return;
+
+        const animationCtx = gsap.context(() => {
+            let visibleIndex = 0;
+
+            gsap.utils.toArray('.project_item').forEach((item) => {
+                const rect = item.getBoundingClientRect();
+
+                if (rect.bottom <= 0) return;
+
+                const animation = {
+                    y: 25,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: 'power2.out',
+                };
+
+                if (rect.top < window.innerHeight) {
+                    gsap.fromTo(item, animation, {
+                        y: 0,
+                        opacity: 1,
+                        duration: animation.duration,
+                        ease: animation.ease,
+                        delay: visibleIndex * 0.1,
+                    });
+                    visibleIndex += 1;
+                    return;
+                }
+
+                gsap.fromTo(item, animation, {
+                    y: 0,
+                    opacity: 1,
+                    duration: animation.duration,
+                    ease: animation.ease,
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 85%',
+                        once: true,
+                    },
+                });
+            });
+
+        }, section);
+
+        return () => animationCtx.revert();
+    }, [layout, selected]);
+
 
     return (
         <>
             <main className="projects_main" id="projects" ref={compRef}>
-                <h1 className="projects_main_title">My Projects.</h1>
+                <h1 className="projects_main_title section_heading">
+                    Ideas, <em>made real</em>.
+                </h1>
 
                 <section className="projects_category_section">
                     <ul>

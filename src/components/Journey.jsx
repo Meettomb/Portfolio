@@ -123,7 +123,9 @@ export default function Journey() {
 
     return (
         <main className="journey_main" id="journey" ref={compRef}>
-            <h1 className="development_journey_title">Development journey.</h1>
+            <h1 className="development_journey_title section_heading">
+                Growth happens <em>one build at a time</em>.
+            </h1>
 
             <section className="journey_section">
                 <div className="journey_list" ref={listRef}>

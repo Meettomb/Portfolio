@@ -59,7 +59,9 @@ export default function TechnicalSkills() {
         // ONE section, ONE main title
         <main className="technical_skills_main" id="skills" ref={compRef}>
 
-            <h1 className='technical_skills_main_title'>Skills &amp; Expertise.</h1>
+            <h1 className='technical_skills_main_title section_heading'>
+                The skills behind <em>what I build</em>.
+            </h1>
 
             {/* Compartment 1: Technical Skills */}
             <section className="skills_compartment" aria-labelledby="skills-heading">

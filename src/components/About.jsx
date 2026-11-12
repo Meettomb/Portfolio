@@ -59,7 +59,9 @@ export default function About() {
     return (
         <>
             <main className='AboutSectionMain' id="about" ref={compRef}>
-                <h1 className='AboutHeading'>Littel About Me..</h1>
+                <h1 className='AboutHeading section_heading'>
+                    I turn curiosity into <em>things that work</em>.
+                </h1>
 
                 <section className='AboutContent'>
 

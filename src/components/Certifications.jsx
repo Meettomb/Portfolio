@@ -39,7 +39,9 @@ export default function Certifications() {
   return (
     <>
       <main className="certifications_main" id="certifications" ref={compRef}>
-        <h1 className="certifications_heading">Certifications.</h1>
+        <h1 className="certifications_heading section_heading">
+          Proof of a <em>learning mindset</em>.
+        </h1>
 
         <section className="certifications_list">
           {certificates.map((cert, index) => (
