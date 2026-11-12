@@ -14,6 +14,7 @@ import TechnicalSkills from './components/TechnicalSkills';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -85,6 +86,7 @@ function App() {
                     <Education/>
                     <Certifications/>
                     <Contact/>
+                    <Footer/>
                     {/* Add Skills, Projects, Experience and Contact here */}
                 </div>
             </div>

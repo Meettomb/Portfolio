@@ -165,7 +165,7 @@ export default function Hero() {
 
                 scrollTrigger: {
                     trigger: '#total-projects, #total-language-used, #devlopment-areas',
-                    start: 'top 80%',
+                    start: 'top 99%',
                     once: true,
                 }
             });
@@ -259,12 +259,16 @@ export default function Hero() {
                             href="#contact"
                             className="hero-btn-secondary"
                             data-cursor="hover"
+                            onClick={(e) => scrollToSection(
+                                e,
+                                navLinks.find((link) => link.id === 'contact')?.href || '#contact'
+                            )}
                         >
                             Contact Me
                         </a>
 
                         <a
-                            href="/resume.pdf"
+                            href="./Meet_Patel.pdf"
                             download="Meet-Patel-Resume.pdf"
                             className="hero-btn-secondary"
                             data-cursor="hover"
