@@ -12,6 +12,7 @@ import Journey from './components/Journey';
 import Projets from './components/Projets';
 import TechnicalSkills from './components/TechnicalSkills';
 import Education from './components/Education';
+import Certifications from './components/Certifications'
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -81,6 +82,7 @@ function App() {
                     <Projets />
                     <TechnicalSkills/>
                     <Education/>
+                    <Certifications/>
                     {/* Add Skills, Projects, Experience and Contact here */}
                 </div>
             </div>

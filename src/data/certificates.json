@@ -1,14 +1,5 @@
 [
   {
-    "id": "NG1Q6CIQHDK4",
-    "title": "Advanced CSS Techniques & Responsive Design",
-    "issuer": "Board Infinity",
-    "issued": "November 2025",
-    "credentialId": "NG1Q6CIQHDK4",
-    "credentialUrl": "https://www.coursera.org/account/accomplishments/records/NG1Q6CIQHDK4",
-    "type": "Course"
-  },
-  {
     "id": "8DL20MUUXEHS",
     "title": "Microsoft Full-Stack Developer Specialization",
     "issuer": "Microsoft",
@@ -19,11 +10,20 @@
   },
   {
     "id": "MTHX40O8U9PZ",
-    "title": "AWS Academy Graduate - AWS Academy Cloud Architecting",
-    "issuer": "Amazon Web Services (AWS)",
-    "issued": "February 2025",
+    "title": ".NET FullStack Developer",
+    "issuer": "Board Infinity",
+    "issued": "January 21, 2026",
     "credentialId": "MTHX40O8U9PZ",
     "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/MTHX40O8U9PZ",
+    "type": "Specialization"
+  },
+  {
+    "id": "Q0Z2P6232XBB",
+    "title": "Google UX Design",
+    "issuer": "Google",
+    "issued": "September 2024",
+    "credentialId": "Q0Z2P6232XBB",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/Q0Z2P6232XBB",
     "type": "Specialization"
   },
   {
@@ -34,15 +34,6 @@
     "credentialId": "66K5QQ463FP3",
     "credentialUrl": "https://www.coursera.org/account/accomplishments/records/66K5QQ463FP3",
     "type": "Course"
-  },
-  {
-    "id": "Q0Z2P6232XBB",
-    "title": "Google UX Design",
-    "issuer": "Google",
-    "issued": "September 2024",
-    "credentialId": "Q0Z2P6232XBB",
-    "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/Q0Z2P6232XBB",
-    "type": "Specialization"
   },
   {
     "id": "ZXTVB5QPAC6Z",
@@ -60,6 +51,15 @@
     "issued": "July 2023",
     "credentialId": "GYHT3CEL98GX",
     "credentialUrl": "https://www.coursera.org/account/accomplishments/records/GYHT3CEL98GX",
+    "type": "Course"
+  },
+  {
+    "id": "NG1Q6CIQHDK4",
+    "title": "Advanced CSS Techniques & Responsive Design",
+    "issuer": "Board Infinity",
+    "issued": "November 2025",
+    "credentialId": "NG1Q6CIQHDK4",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/records/NG1Q6CIQHDK4",
     "type": "Course"
   }
 ]
