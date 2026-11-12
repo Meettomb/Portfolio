@@ -20,6 +20,16 @@
     "id": "skills"
   },
   {
+    "name": "Education",
+    "href": "#education",
+    "id": "education"
+  },
+  {
+    "name":"Certifications",
+    "href":"#certifications",
+    "id": "certifications"
+  },
+  {
     "name": "Contact",
     "href": "#contact",
     "id": "contact"

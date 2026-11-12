@@ -1,0 +1,60 @@
+{
+  "education": [
+    {
+      "id": "mca",
+      "number": "01",
+      "degree": "Master of Computer Applications",
+      "shortName": "MCA",
+      "institution": "LJ University",
+      "location": "Ahmedabad, Gujarat, India",
+      "startYear": "2025",
+      "endYear": "",
+      "period": "2025 – Present",
+      "status": "Pursuing",
+      "current": true,
+      "score": ""
+    },
+    {
+      "id": "bca",
+      "number": "02",
+      "degree": "Bachelor of Computer Applications",
+      "shortName": "BCA",
+      "institution": "LJ University",
+      "location": "Ahmedabad, Gujarat, India",
+      "startYear": "2022",
+      "endYear": "2025",
+      "period": "2022 – 2025",
+      "status": "Completed",
+      "current": false,
+      "score": "70%"
+    },
+    {
+      "id": "hsc",
+      "number": "03",
+      "degree": "Higher Secondary (12th)",
+      "shortName": "12th",
+      "institution": "Sharda Vidyalaya",
+      "location": "Ahmedabad, Gujarat, India",
+      "startYear": "",
+      "endYear": "2022",
+      "period": "2022",
+      "status": "Completed",
+      "current": false,
+      "score": "50.4%"
+    },
+    {
+      "id": "ssc",
+      "number": "04",
+      "degree": "Secondary (10th)",
+      "shortName": "10th",
+      "institution": "Sharda Vidyalaya",
+      "location": "Ahmedabad, Gujarat, India",
+      "startYear": "",
+      "endYear": "2020",
+      "period": "2020",
+      "status": "Completed",
+      "current": false,
+      "score": "51.83%"
+    }
+  ]
+}

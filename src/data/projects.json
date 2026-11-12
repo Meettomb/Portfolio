@@ -324,6 +324,7 @@
       "featured": false,
       "title": "Planteria",
       "badge": "Laravel E-commerce Application",
+      "videoLink":"./assets/Videos/Planteria-Project.mp4",
       "year": "",
       "categories": [
         "PHP",
@@ -365,6 +366,7 @@
       "featured": false,
       "title": "Coast Luxury Cars",
       "badge": "Laravel Web Application",
+      "videoLink":"./assets/Videos/Coast_Luxury_Cars.mp4",
       "year": "",
       "categories": [
         "PHP",
