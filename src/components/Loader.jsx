@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export default function Loader() {
@@ -6,12 +5,12 @@ export default function Loader() {
     <div className="coder-loader">
       <div className="loader-content">
 
-        {/* Logo / Developer Icon */}
+        {/* Developer Logo */}
         <div className="loader-icon">
           <span>{'<'}<span className="orange">/</span>{'>'}</span>
         </div>
 
-        {/* Terminal */}
+        {/* Developer Terminal */}
         <div className="loader-terminal">
           <div className="terminal-header">
             <div className="terminal-dots">
@@ -19,27 +18,29 @@ export default function Loader() {
               <span />
               <span />
             </div>
+
             <span className="terminal-title">
-              meet@portfolio: ~
+              meet@developer: ~
             </span>
+
             <span className="terminal-menu">•••</span>
           </div>
 
           <div className="terminal-body">
             <p>
               <span className="terminal-green">➜</span>
-              <span className="terminal-path"> ~/portfolio</span>
+              <span className="terminal-path"> ~/developer-life</span>
             </p>
 
             <p className="terminal-command">
-              $ initializing_portfolio<span className="cursor">_</span>
+              $ npm run make-it-happen<span className="cursor">_</span>
             </p>
 
             <div className="terminal-logs">
-              <p><span>[OK]</span> Loading components...</p>
-              <p><span>[OK]</span> Initializing animations...</p>
-              <p><span>[OK]</span> Compiling styles...</p>
-              <p><span>[OK]</span> Preparing experience...</p>
+              <p><span>[COFFEE]</span> Turning caffeine into code...</p>
+              <p><span>[DEBUG]</span> Why is it working on my machine?</p>
+              <p><span>[FIXED]</span> Broke two things. Fixed three.</p>
+              <p><span>[SUCCESS]</span> It works! Nobody touch anything.</p>
             </div>
           </div>
         </div>
@@ -47,8 +48,8 @@ export default function Loader() {
         {/* Loading Progress */}
         <div className="loader-progress-section">
           <div className="loader-progress-info">
-            <span>BUILDING EXPERIENCE</span>
-            <span className="loader-percentage">LOADING...</span>
+            <span>ASSEMBLING PIXELS & POSSIBILITIES</span>
+            <span className="loader-percentage">ALMOST THERE...</span>
           </div>
 
           <div className="loader-progress-track">
@@ -58,8 +59,8 @@ export default function Loader() {
 
         {/* Footer */}
         <div className="loader-footer">
-          <span>CRAFTED WITH CODE</span>
-          <span> <span className="orange">●</span> SYSTEM ONLINE</span>
+          <span>BUILT WITH CURIOSITY & COFFEE</span>
+          <span><span className="orange">●</span> BUGS UNDER CONTROL*</span>
         </div>
 
       </div>
