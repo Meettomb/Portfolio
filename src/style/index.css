@@ -161,14 +161,14 @@ body {
   font-size: clamp(2.3rem, 5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--color-orange);
+  color: var(--text-primary);
   margin-top: 5rem;
 }
 
 .section_heading em,
 .contact_main .contact_main_heading em {
   font-style: italic;
-  color: var(--text-primary);
+  color: var(--color-orange);
 }
 
 
