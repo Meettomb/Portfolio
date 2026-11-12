@@ -78,7 +78,7 @@ function App() {
 
             <div id="smooth-wrapper">
                 <div id="smooth-content">
-                    <Hero />
+                    <Hero startAnimation={!isLoading} />
                     <About />
                     <Journey />
                     <Projets />

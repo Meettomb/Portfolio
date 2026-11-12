@@ -23,7 +23,7 @@ export default function About() {
                         ...vars,
                         scrollTrigger: {
                             trigger: el,
-                            start: 'top 85%',
+                            start: 'top 90%',
                             once: true,
                         },
                     });
@@ -44,7 +44,7 @@ export default function About() {
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: '.AboutRightside',
-                    start: 'top 85%',
+                    start: 'top 90%',
                     once: true,
                 },
             });

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -10,7 +10,8 @@ import Projects from '../data/projects.json';
 // Register GSAP Plugins
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-export default function Hero() {
+export default function Hero({ startAnimation }) {
+    const introTlRef = useRef(null);
     const navLinks = navLinksData;
     const compRef = useRef(null);
     const overviewRef = useRef(null);
@@ -45,10 +46,13 @@ export default function Hero() {
 
             // Initial Page Load Entrance Timeline
             const introTl = gsap.timeline({
+                paused: true,
                 defaults: {
                     ease: 'power3.out'
                 }
             });
+
+            introTlRef.current = introTl;
 
             introTl
                 .from('.hero-greeting', {
@@ -180,9 +184,17 @@ export default function Hero() {
         return () => {
             heroCtx.revert();
             overviewCtx.revert();
+
+            introTlRef.current = null;
         };
 
     }, []);
+
+    useEffect(() => {
+        if (startAnimation && introTlRef.current) {
+            introTlRef.current.play();
+        }
+    }, [startAnimation]);
 
 
     const scrollToSection = (e, href) => {

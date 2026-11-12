@@ -133,7 +133,7 @@ export default function Projects() {
                         ...vars,
                         scrollTrigger: {
                             trigger: el,
-                            start: 'top 85%',
+                            start: 'top 90%',
                             once: true,
                         },
                     });
@@ -187,7 +187,7 @@ export default function Projects() {
                     ease: animation.ease,
                     scrollTrigger: {
                         trigger: item,
-                        start: 'top 85%',
+                        start: 'top 90%',
                         once: true,
                     },
                 });

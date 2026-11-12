@@ -22,7 +22,7 @@ export default function Certifications() {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: element,
-              start: 'top 85%',
+              start: 'top 90%',
               once: true,
             },
           })
