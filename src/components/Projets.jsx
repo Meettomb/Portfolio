@@ -6,7 +6,7 @@ import { FaList, FaGrip } from 'react-icons/fa6';
 import gsap from 'gsap';
 
 // Gradient panel (or real screenshot if you add one in projects.json)
-function ProjectArt({ project }) {
+function ProjectArt({ project, showVideoControls = false }) {
     const [videoFailed, setVideoFailed] = useState(false);
 
     // Existing screenshot support
@@ -47,6 +47,7 @@ function ProjectArt({ project }) {
                 muted
                 loop
                 playsInline
+                controls={showVideoControls}
                 onError={() => setVideoFailed(true)}
             />
         </div>
@@ -332,7 +333,7 @@ export default function Projects() {
                         >
 
 
-                            <ProjectArt project={zoom} />
+                            <ProjectArt project={zoom} showVideoControls />
                         </div>
                     </div>,
                     document.body
