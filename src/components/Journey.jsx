@@ -17,16 +17,22 @@ export default function Journey() {
 
     useEffect(() => {
         let ticking = false;
+        const fill = fillRef.current;
+        const smoothFillHeight = fill
+            ? gsap.quickTo(fill, 'height', {
+                duration: 0.1,
+                ease: 'power2.out',
+            })
+            : null;
 
         const update = () => {
             ticking = false;
 
             const list = listRef.current;
             const track = trackRef.current;
-            const fill = fillRef.current;
             const dots = dotRefs.current.filter(Boolean);
 
-            if (!list || !track || !fill || dots.length === 0) return;
+            if (!list || !track || !fill || !smoothFillHeight || dots.length === 0) return;
 
             const vh = window.innerHeight;
             const listTop = list.getBoundingClientRect().top;
@@ -50,16 +56,17 @@ export default function Journey() {
             track.style.top = `${firstCenter - listTop}px`;
             track.style.height = `${totalHeight}px`;
 
-            // Reference line (middle of the screen).
+            // Reference line lower in the screen so progress starts earlier.
             // Near the page bottom it slides down so the line can reach its end.
             const docHeight = document.documentElement.scrollHeight;
             const remaining = docHeight - (window.scrollY + vh);
-            const extra = Math.max(0, vh * 0.5 - remaining);
-            const refY = vh * 0.5 + extra;
+            const baseRefY = vh * 0.7;
+            const extra = Math.max(0, vh - baseRefY - remaining);
+            const refY = baseRefY + extra;
 
             // Smooth progress: follows scroll (grows and shrinks)
             const filled = Math.min(Math.max(refY - firstCenter, 0), totalHeight);
-            fill.style.height = `${filled}px`;
+            smoothFillHeight(filled);
 
             // Active dot = last dot the line has passed
             let current = 0;
@@ -84,6 +91,7 @@ export default function Journey() {
         return () => {
             window.removeEventListener('scroll', onScroll);
             window.removeEventListener('resize', onScroll);
+            if (fill) gsap.killTweensOf(fill);
         };
     }, [journeyData.length]);
 
