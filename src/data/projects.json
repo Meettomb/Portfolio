@@ -6,7 +6,7 @@
       "featured": true,
       "title": "FocusTrack",
       "badge": "Windows Desktop Application",
-      "videoLink":"./assets/Videos/FocusTrack-Project.mp4",
+      "videoLink":"/assets/Videos/FocusTrack-Project.mp4",
       "year": "2025",
       "categories": [
         "Desktop"
@@ -58,7 +58,7 @@
       "featured": true,
       "title": "VOCO",
       "badge": "Full Stack Web Application",
-      "videoLink":"./assets/Videos/Voco-Project.mp4",
+      "videoLink":"/assets/Videos/Voco-Project.mp4",
       "year": "2026",
       "categories": [
         "Full Stack"
@@ -116,7 +116,7 @@
       "featured": false,
       "title": "PatternLab",
       "badge": "Creative Web Application",
-      "videoLink":"./assets/Videos/PatternLab-Project.mp4",
+      "videoLink":"/assets/Videos/PatternLab-Project.mp4",
       "year": "",
       "categories": [
         "Creative Web"
@@ -198,7 +198,7 @@
       "featured": false,
       "title": "HealthConnect",
       "badge": "Healthcare Web Application",
-      "videoLink":"./assets/Videos/HealthConnect-Project.mp4",
+      "videoLink":"/assets/Videos/HealthConnect-Project.mp4",
       "year": "2025",
       "categories": [
         "Full Stack"
@@ -240,7 +240,7 @@
       "featured": false,
       "title": "PlayMe",
       "badge": ".NET Web Application",
-      "videoLink":"./assets/Videos/PlayMe-Project.mp4",
+      "videoLink":"/assets/Videos/PlayMe-Project.mp4",
       "year": "2024",
       "categories": [
         "Full Stack"
@@ -281,7 +281,7 @@
       "featured": false,
       "title": "LaFerrari 3D",
       "badge": "Creative Frontend Development",
-      "videoLink": "./assets/Videos/3D-LaFerrari-Project.mp4",
+      "videoLink": "/assets/Videos/3D-LaFerrari-Project.mp4",
       "year": "",
       "categories": [
         "Creative Web"
@@ -325,7 +325,7 @@
       "featured": false,
       "title": "Planteria",
       "badge": "Laravel E-commerce Application",
-      "videoLink":"./assets/Videos/Planteria-Project.mp4",
+      "videoLink":"/assets/Videos/Planteria-Project.mp4",
       "year": "",
       "categories": [
         "PHP",
@@ -367,7 +367,7 @@
       "featured": false,
       "title": "Coast Luxury Cars",
       "badge": "Laravel Web Application",
-      "videoLink":"./assets/Videos/Coast_Luxury_Cars-Project.mp4",
+      "videoLink":"/assets/Videos/Coast_Luxury_Cars-Project.mp4",
       "year": "",
       "categories": [
         "PHP",

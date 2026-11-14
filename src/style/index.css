@@ -887,7 +887,7 @@ body {
   background: linear-gradient(135deg,
       var(--color-orange) 50%,
       var(--bg-card) 50%);
-  border-radius: 45% 55% 60% 40% / 50% 60% 40% 50%;
+  border-radius: 50%;
   border: 1px solid var(--border-secondary);
   z-index: 2;
   pointer-events: none;

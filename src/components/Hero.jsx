@@ -107,7 +107,7 @@ export default function Hero({ startAnimation }) {
 
             // 3. Fluid Blob Morphing Animation
             gsap.to(
-                ['.blob-shape', '.blob-backdrop', '.blob-ring'],
+                ['.blob-shape', '.blob-ring'],
                 {
                     borderRadius: '50%',
                     duration: 4,
