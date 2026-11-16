@@ -104,7 +104,7 @@
       ],
       "demo": {
         "label": "Live demo",
-        "url": "https://voco-mern-six.vercel.app/"
+        "url": "https://voco-mern.vercel.app/"
       },
       "github": "https://github.com/Meettomb/Voco-MERN",
       "gradient": "linear-gradient(135deg,#0f3d3a,#2a1f4d)",
